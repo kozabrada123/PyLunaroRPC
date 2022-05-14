@@ -1,4 +1,4 @@
-# PyLunaroTracker
+# PyLunaroRPC
 A simple tool for Warframe Lunaro which shows players in the match on your profile with Discord RPC.
 
 ![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroTracker)
