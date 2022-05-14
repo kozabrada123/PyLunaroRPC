@@ -49,8 +49,6 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 
 - `No package .. was found` - This usually means you haven't installed the requirements correctly, try manually installing the library with pip
 
-- `pytesseract.pytesseract.TesseractNotFoundError: Dependencies/Tesseract-OCR/tesseract.exe is not installed or it's not in your PATH. See README file for more information.` - this means you haven't properly installed Tesseract or it isn't in the right location
-
 - `NameError: name 'YOURAPPIDHERE' is not defined` - you haven't set your AppId
 
 - Can't see presence on profile - This usually means you haven't enabled Game Activity in Discord Settings (`Settings/Activity Status/Display current activity as status message`). If you have, try to exit any other running games or try to turn Game Activity On and Off. 
