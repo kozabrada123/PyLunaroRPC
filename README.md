@@ -16,7 +16,7 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
   - [Getting Started](#getting-started)
   - [Usage](#usage)
   - [Troubleshooting](#troubleshooting-and-common-issues)
-  - [Todo](#to:do-and-future-updates-to-excpect)
+  - [Todo](#to-do-and-future-updates-to-excpect)
 
 
 
@@ -55,7 +55,7 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 - Can't see presence on profile - This usually means you haven't enabled Game Activity in Discord Settings (`Settings/Activity Status/Display current activity as status message`). If you have, try to exit any other running games or try to turn Game Activity On and Off. 
 
 
-## TO:DO And Future Updates To Excpect
+## TO-DO And Future Updates To Excpect
 
 - **At least basic Ui**
 - **Implementation with the Discord Game SDK**
