@@ -1,0 +1,1324 @@
+{
+  "Lunaro Players": {
+    "--HM--DaveElionHUN": {
+      "Name": "--HM--DaveElionHUN",
+      "Shortn": "DaveElion",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "Coco725": {
+      "Name": "Coco725",
+      "Shortn": "Coco",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "Eragon": {
+      "Name": "Eragon",
+      "Shortn": "Eragon",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "KutthroatVik": {
+      "Name": "KutthroatVik",
+      "Shortn": "KutthroatVik",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "NieweHX": {
+      "Name": "NieweHX",
+      "Shortn": "NieweHX",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "QmillS": {
+      "Name": "QmillS",
+      "Shortn": "Qmills",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "RebelDeFaust": {
+      "Name": "RebelDeFaust",
+      "Shortn": "Faust",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "Testedant": {
+      "Name": "Testedant",
+      "Shortn": "Tstedant",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "tukan165": {
+      "Name": "tukan165",
+      "Shortn": "Tukan",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "Tzirael": {
+      "Name": "Tzirael",
+      "Shortn": "Tzirael",
+      "Rank": "Master",
+      "RankInt": 6
+    },
+    "--Q--DragonSkllzz": {
+      "Name": "--Q--DragonSkllzz",
+      "Shortn": "DragonSkllzz",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "-A-kira": {
+      "Name": "-A-kira",
+      "Shortn": "Akira",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "-THP-KomeijiKoishi": {
+      "Name": "-THP-KomeijiKoishi",
+      "Shortn": "Koishi",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "-Yamato-Nadeshiko-": {
+      "Name": "-Yamato-Nadeshiko-",
+      "Shortn": "Yamato",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "4y8aKk": {
+      "Name": "4y8aKk",
+      "Shortn": "4y8aKk",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "African-Sapien616": {
+      "Name": "African-Sapien616",
+      "Shortn": "Sapien",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Balki_772": {
+      "Name": "Balki_772",
+      "Shortn": "Balki",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Caorun": {
+      "Name": "Caorun",
+      "Shortn": "Caorun",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "captain_feeder": {
+      "Name": "captain_feeder",
+      "Shortn": "CptFeeder",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Cats.": {
+      "Name": "Cats.",
+      "Shortn": "Cats",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "coolbe": {
+      "Name": "coolbe",
+      "Shortn": "Coolbe",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Funki0": {
+      "Name": "Funki0",
+      "Shortn": "Funki0",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "gelox_N7": {
+      "Name": "gelox_N7",
+      "Shortn": "Gelox",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Madamides": {
+      "Name": "Madamides",
+      "Shortn": "Madamites",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Maylou.": {
+      "Name": "Maylou.",
+      "Shortn": "Maylou",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Neuroszima": {
+      "Name": "Neuroszima",
+      "Shortn": "Nroszima",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Yujas": {
+      "Name": "Yujas",
+      "Shortn": "Yujas",
+      "Rank": "Pro",
+      "RankInt": 5
+    },
+    "Air Max 431": {
+      "Name": "Air Max 431",
+      "Shortn": "AirMax",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "antihero18": {
+      "Name": "antihero18",
+      "Shortn": "Antihero",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "CR1T3R_": {
+      "Name": "CR1T3R_",
+      "Shortn": "CRITER",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "Dog49": {
+      "Name": "Dog49",
+      "Shortn": "Dog49",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "LIloBoy4ik": {
+      "Name": "LIloBoy4ik",
+      "Shortn": "LIloBoy",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "mememanxd": {
+      "Name": "mememanxd",
+      "Shortn": "MemeMan",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "Mha_Miho": {
+      "Name": "Mha_Miho",
+      "Shortn": "MhaMiho",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "quonnz": {
+      "Name": "quonnz",
+      "Shortn": "Quonnz",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "SeaHorn": {
+      "Name": "SeaHorn",
+      "Shortn": "SeaHorn",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "teaman.": {
+      "Name": "teaman.",
+      "Shortn": "Teaman",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "Vavency": {
+      "Name": "Vavency",
+      "Shortn": "Vavency",
+      "Rank": "Skilled",
+      "RankInt": 4
+    },
+    "--Q--EvalueAction": {
+      "Name": "--Q--EvalueAction",
+      "Shortn": "EvalueActn",
+      "Rank": "Amateur",
+      "RankInt": 3
+    },
+    "ru_Dolph": {
+      "Name": "ru_Dolph",
+      "Shortn": "RuDolph",
+      "Rank": "Amateur",
+      "RankInt": 3
+    },
+    "Ryeval": {
+      "Name": "Ryeval",
+      "Shortn": "Ryeval",
+      "Rank": "Amateur",
+      "RankInt": 3
+    },
+    "CreepPrime": {
+      "Name": "CreepPrime",
+      "Shortn": "Creep",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "destroyer1_8": {
+      "Name": "destroyer1_8",
+      "Shortn": "Destroyer",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "Devil_17": {
+      "Name": "Devil_17",
+      "Shortn": "Devil17",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "GrobokfroG": {
+      "Name": "GrobokfroG",
+      "Shortn": "GrobkFrog",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "Oddity_Slayer": {
+      "Name": "Oddity_Slayer",
+      "Shortn": "OddtySlayr",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "WoofyGoldberg": {
+      "Name": "WoofyGoldberg",
+      "Shortn": "WoGoldberg",
+      "Rank": "Padawan",
+      "RankInt": 2
+    },
+    "-AK-ECFD": {
+      "Name": "-AK-ECFD",
+      "Shortn": "Erren",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "-Frederic Dunoir-": {
+      "Name": "-Frederic Dunoir-",
+      "Shortn": "FredDunoir",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "-LOF-thibopraet": {
+      "Name": "-LOF-thibopraet",
+      "Shortn": "Thibopraet",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "-TD-TenienteCoronelPrime": {
+      "Name": "-TD-TenienteCoronelPrime",
+      "Shortn": "CoronelPrime",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    ".Ares": {
+      "Name": ".Ares",
+      "Shortn": "Ares",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "4iydDragon": {
+      "Name": "4iydDragon",
+      "Shortn": "4iydDragon",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "AbsoluteOmega": {
+      "Name": "AbsoluteOmega",
+      "Shortn": "AOmega",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "AisuTistoto223": {
+      "Name": "AisuTistoto223",
+      "Shortn": "Aisu",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Alliance": {
+      "Name": "Alliance",
+      "Shortn": "Alliance",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Born2Lose": {
+      "Name": "Born2Lose",
+      "Shortn": "B2Lose",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Carnage": {
+      "Name": "Carnage",
+      "Shortn": "Carnage",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Cephalon.Tormis": {
+      "Name": "Cephalon.Tormis",
+      "Shortn": "Tormis",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Cozmic22": {
+      "Name": "Cozmic22",
+      "Shortn": "Cozmic",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "CPiou": {
+      "Name": "CPiou",
+      "Shortn": "CPiou",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Daddy4k": {
+      "Name": "Daddy4k",
+      "Shortn": "Daddy4k",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "demycat": {
+      "Name": "demycat",
+      "Shortn": "Demycat",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "DrakosAmatras": {
+      "Name": "DrakosAmatras",
+      "Shortn": "Drakos",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "DV9983": {
+      "Name": "DV9983",
+      "Shortn": "DV9983",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Dylandipsaud": {
+      "Name": "Dylandipsaud",
+      "Shortn": "Dypsaud",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Elicus": {
+      "Name": "Elicus",
+      "Shortn": "Elicus",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Elielrenan": {
+      "Name": "Elielrenan",
+      "Shortn": "Elielrenan",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "EoR_YYYYYYYYYYYYYYYYYYYY": {
+      "Name": "EoR_YYYYYYYYYYYYYYYYYYYY",
+      "Shortn": "EoR_Y",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Eremiell": {
+      "Name": "Eremiell",
+      "Shortn": "Eremiell",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "ExerentPrime": {
+      "Name": "ExerentPrime",
+      "Shortn": "ExrntPrime",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Falselight27": {
+      "Name": "Falselight27",
+      "Shortn": "Flselight",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "FatKavat": {
+      "Name": "FatKavat",
+      "Shortn": "FatKavat",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "FerdinantFreez": {
+      "Name": "FerdinantFreez",
+      "Shortn": "FerdFreez",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "GameGhost123": {
+      "Name": "GameGhost123",
+      "Shortn": "GmeGhost",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Gnomeasoarus": {
+      "Name": "Gnomeasoarus",
+      "Shortn": "Gnmesrs",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Hacker_lyx": {
+      "Name": "Hacker_lyx",
+      "Shortn": "Hckerlyx",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "HellEaglee": {
+      "Name": "HellEaglee",
+      "Shortn": "HellEagle",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Hexamoon": {
+      "Name": "Hexamoon",
+      "Shortn": "Hexmoon",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Hiromacu": {
+      "Name": "Hiromacu",
+      "Shortn": "Hiromacu",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Insectoo": {
+      "Name": "Insectoo",
+      "Shortn": "Inscto",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Ishamae1": {
+      "Name": "Ishamae1",
+      "Shortn": "Ishamae1",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "ITS_THE_BEAST48": {
+      "Name": "ITS_THE_BEAST48",
+      "Shortn": "Beast48",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "JellyBeananator": {
+      "Name": "JellyBeananator",
+      "Shortn": "JellyBeantr",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "JohnnyGU": {
+      "Name": "JohnnyGU",
+      "Shortn": "JohnnyGU",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "JoJoshuee_DesK": {
+      "Name": "JoJoshuee_DesK",
+      "Shortn": "Jojoshue",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "KnightCrawler": {
+      "Name": "KnightCrawler",
+      "Shortn": "KngtCrawler",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "koza1brada": {
+      "Name": "koza1brada",
+      "Shortn": "kozabrada",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "lmonster314": {
+      "Name": "lmonster314",
+      "Shortn": "lmonster",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Luckythestar": {
+      "Name": "Luckythestar",
+      "Shortn": "Luckythestar",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "maczkoo": {
+      "Name": "maczkoo",
+      "Shortn": "Maczkoo",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Motorboy": {
+      "Name": "Motorboy",
+      "Shortn": "Motorboy",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "NamiYukozoma": {
+      "Name": "NamiYukozoma",
+      "Shortn": "NamiYuko",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Nistafranger": {
+      "Name": "Nistafranger",
+      "Shortn": "Nstfrnger",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "NoMoreFail": {
+      "Name": "NoMoreFail",
+      "Shortn": "NMFail",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "NÐ°Ð¡l": {
+      "Name": "NÐ°Ð¡l",
+      "Shortn": "NÐ°Ð¡l",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Om1n0usL3ague": {
+      "Name": "Om1n0usL3ague",
+      "Shortn": "OmnsLeague",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Omegakris": {
+      "Name": "Omegakris",
+      "Shortn": "Omgakris",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Pebble_24": {
+      "Name": "Pebble_24",
+      "Shortn": "Pebble24",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Pen_Pen_Pen": {
+      "Name": "Pen_Pen_Pen",
+      "Shortn": "PenPen",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Player0187": {
+      "Name": "Player0187",
+      "Shortn": "Player0187",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "PressXtoJason": {
+      "Name": "PressXtoJason",
+      "Shortn": "XJason",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Radu10": {
+      "Name": "Radu10",
+      "Shortn": "Radu10",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Rafalmat": {
+      "Name": "Rafalmat",
+      "Shortn": "Rflmat",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "rafalmo11": {
+      "Name": "rafalmo11",
+      "Shortn": "Rafalmo",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Rauniel": {
+      "Name": "Rauniel",
+      "Shortn": "Rauniel",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "RedNaW": {
+      "Name": "RedNaW",
+      "Shortn": "RedNaW",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "RegularPL": {
+      "Name": "RegularPL",
+      "Shortn": "RgularPL",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Saint_Sigil": {
+      "Name": "Saint_Sigil",
+      "Shortn": "SntSigl",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Sakurakosan": {
+      "Name": "Sakurakosan",
+      "Shortn": "SakuroSan",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Savoy": {
+      "Name": "Savoy",
+      "Shortn": "Savoy",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Scrap_Gundam": {
+      "Name": "Scrap_Gundam",
+      "Shortn": "ScrpGundam",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "SealBro": {
+      "Name": "SealBro",
+      "Shortn": "SealBro",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Shmitti": {
+      "Name": "Shmitti",
+      "Shortn": "Shmitti",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "SK_Souzs": {
+      "Name": "SK_Souzs",
+      "Shortn": "Souzs",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "SkyeZen": {
+      "Name": "SkyeZen",
+      "Shortn": "SkyeZen",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Supe84": {
+      "Name": "Supe84",
+      "Shortn": "Supe",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "T3THY5": {
+      "Name": "T3THY5",
+      "Shortn": "Tethys",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "The_Am0nnal13": {
+      "Name": "The_Am0nnal13",
+      "Shortn": "Amnnal",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "TheEmeror59": {
+      "Name": "TheEmeror59",
+      "Shortn": "Emeror",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "TheEmperor59": {
+      "Name": "TheEmperor59",
+      "Shortn": "Emperor",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Theroxenes": {
+      "Name": "Theroxenes",
+      "Shortn": "Theroxns",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "TheThymeLord": {
+      "Name": "TheThymeLord",
+      "Shortn": "ThymeLrd",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Triplinster": {
+      "Name": "Triplinster",
+      "Shortn": "Trplnster",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Trostfall": {
+      "Name": "Trostfall",
+      "Shortn": "Trostfall",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Turbozis": {
+      "Name": "Turbozis",
+      "Shortn": "Turbozis",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "ULTRA_FROST___": {
+      "Name": "ULTRA_FROST___",
+      "Shortn": "UltraFrost",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "uumm": {
+      "Name": "uumm",
+      "Shortn": "uumm",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Vennikyo": {
+      "Name": "Vennikyo",
+      "Shortn": "Venkyo",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Vesper": {
+      "Name": "Vesper",
+      "Shortn": "Vesper",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Voltage": {
+      "Name": "Voltage",
+      "Shortn": "Voltage",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Wizderra": {
+      "Name": "Wizderra",
+      "Shortn": "Wzderra",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Xalgarios": {
+      "Name": "Xalgarios",
+      "Shortn": "Xlgrios",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Xander3359": {
+      "Name": "Xander3359",
+      "Shortn": "Xander",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Xo4yYMePetb": {
+      "Name": "Xo4yYMePetb",
+      "Shortn": "Xo4yPetb",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "xXx_D0MINAT0R_xXx": {
+      "Name": "xXx_D0MINAT0R_xXx",
+      "Shortn": "Dominator",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "Zrakamir": {
+      "Name": "Zrakamir",
+      "Shortn": "Zrakmir",
+      "Rank": "Neophyte",
+      "RankInt": 1
+    },
+    "HIMIK-MAN": {
+      "Name": "HIMIK-MAN",
+      "Shortn": "HmkMan",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "ThatOneDude00": {
+      "Name": "ThatOneDude00",
+      "Shortn": "ThtDude",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "PenolAkushari": {
+      "Name": "PenolAkushari",
+      "Shortn": "Akshari",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "_Mega_Ninja_": {
+      "Name": "_Mega_Ninja_",
+      "Shortn": "MgaNinja",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "polaris_warframe": {
+      "Name": "polaris_warframe",
+      "Shortn": "Polaris",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Aetheric_": {
+      "Name": "Aetheric_",
+      "Shortn": "Aerthric",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "masterx5555": {
+      "Name": "masterx5555",
+      "Shortn": "Masterx",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "migalha2002": {
+      "Name": "migalha2002",
+      "Shortn": "Migalha",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Jezus_Chytrus": {
+      "Name": "Jezus_Chytrus",
+      "Shortn": "Chytrus",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "tegoniedasiezmienic": {
+      "Name": "tegoniedasiezmienic",
+      "Shortn": "tegoniedasiezmienic",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "FunnyMonkeyBaz": {
+      "Name": "FunnyMonkeyBaz",
+      "Shortn": "MnkyBaz",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Uchimura": {
+      "Name": "Uchimura",
+      "Shortn": "Uchmra",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "L3PandaR0ux": {
+      "Name": "L3PandaR0ux",
+      "Shortn": "PandaRoux",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "clxrffdman": {
+      "Name": "clxrffdman",
+      "Shortn": "Clxrfdman",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "DaigustoEmeral": {
+      "Name": "DaigustoEmeral",
+      "Shortn": "DgstEmeral",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Splake975": {
+      "Name": "Splake975",
+      "Shortn": "Splake",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "p2ych0_": {
+      "Name": "p2ych0_",
+      "Shortn": "p2ych0",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "pf_69": {
+      "Name": "pf_69",
+      "Shortn": "pf69",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Zenethereonix": {
+      "Name": "Zenethereonix",
+      "Shortn": "Znthonix",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Xavis.Hyper": {
+      "Name": "Xavis.Hyper",
+      "Shortn": "XavisHypr",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Zirlian": {
+      "Name": "Zirlian",
+      "Shortn": "Zrlian",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "FunkyFreshOsimi": {
+      "Name": "FunkyFreshOsimi",
+      "Shortn": "FkyFshSimi",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "HopeSoSure": {
+      "Name": "HopeSoSure",
+      "Shortn": "HSoSure",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "IgnisWings": {
+      "Name": "IgnisWings",
+      "Shortn": "IgnsWngs",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Baszotek_To_Ja": {
+      "Name": "Baszotek_To_Ja",
+      "Shortn": "Baszotek",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Fantom_gaming1010": {
+      "Name": "Fantom_gaming1010",
+      "Shortn": "FntmGaming",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "bober_orginal": {
+      "Name": "bober_orginal",
+      "Shortn": "BoberOG",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "TechNoLoGic__": {
+      "Name": "TechNoLoGic__",
+      "Shortn": "Tchnlgc",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Coby": {
+      "Name": "Coby",
+      "Shortn": "Coby",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Haze": {
+      "Name": "Haze",
+      "Shortn": "Haze",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Voodoo": {
+      "Name": "Voodoo",
+      "Shortn": "Vdoo",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Coblader": {
+      "Name": "Coblader",
+      "Shortn": "Cblder",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Goatgunner": {
+      "Name": "Goatgunner",
+      "Shortn": "GtGunner",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Nex808": {
+      "Name": "Nex808",
+      "Shortn": "Nex808",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Intake1": {
+      "Name": "Intake1",
+      "Shortn": "Intake",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "2psuit": {
+      "Name": "2psuit",
+      "Shortn": "2psuit",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Iteraquilex": {
+      "Name": "Iteraquilex",
+      "Shortn": "Itraqlex",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "CelestialPenguin": {
+      "Name": "CelestialPenguin",
+      "Shortn": "ClstlPenguin",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "blefiaczekx1": {
+      "Name": "blefiaczekx1",
+      "Shortn": "Blfiaczekx",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "blefiak": {
+      "Name": "blefiak",
+      "Shortn": "Blefiak",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Qbaqnc": {
+      "Name": "Qbaqnc",
+      "Shortn": "Qbaqnc",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "StefanW2": {
+      "Name": "StefanW2",
+      "Shortn": "StefanW2",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Kazk250": {
+      "Name": "Kazk250",
+      "Shortn": "Kazk",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Seszer": {
+      "Name": "Seszer",
+      "Shortn": "Seszer",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "JustWeamy": {
+      "Name": "JustWeamy",
+      "Shortn": "JustWeamy",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Insangaming9000": {
+      "Name": "Insangaming9000",
+      "Shortn": "InsnGaming",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "SampleText_vich": {
+      "Name": "SampleText_vich",
+      "Shortn": "SampleTxt",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Master-Nutty": {
+      "Name": "Master-Nutty",
+      "Shortn": "MstrNutty",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "JabronLee": {
+      "Name": "JabronLee",
+      "Shortn": "JabrnLee",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Scorched_Darrin": {
+      "Name": "Scorched_Darrin",
+      "Shortn": "SchDarrin",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Hunterstil": {
+      "Name": "Hunterstil",
+      "Shortn": "Hntrstil",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Alkorin": {
+      "Name": "Alkorin",
+      "Shortn": "Alkorin",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "master353": {
+      "Name": "master353",
+      "Shortn": "Master353",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "ShadowTheThird": {
+      "Name": "ShadowTheThird",
+      "Shortn": "ShdwThird",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Rudy807": {
+      "Name": "Rudy807",
+      "Shortn": "Rudy807",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "crepes_de_banana": {
+      "Name": "crepes_de_banana",
+      "Shortn": "CrpsBanana",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "PDFDS": {
+      "Name": "PDFDS",
+      "Shortn": "PDFDS",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "MFord232": {
+      "Name": "MFord232",
+      "Shortn": "MFord232",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "MrT23212": {
+      "Name": "MrT23212",
+      "Shortn": "MrT23212",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "DomiXD76": {
+      "Name": "DomiXD76",
+      "Shortn": "DmiXD",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "ANKOR88": {
+      "Name": "ANKOR88",
+      "Shortn": "Ankor",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "sarcasticpengwuin": {
+      "Name": "sarcasticpengwuin",
+      "Shortn": "SrcstcPenguin",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "OwwMyFoot": {
+      "Name": "OwwMyFoot",
+      "Shortn": "OwwMyFoot",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "way2tired2wakeup": {
+      "Name": "way2tired2wakeup",
+      "Shortn": "Way2Tired",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Quellease": {
+      "Name": "Quellease",
+      "Shortn": "Qllease",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Quetzalquoatle": {
+      "Name": "Quetzalquoatle",
+      "Shortn": "QuetzlQuoatle",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Sasha2k1": {
+      "Name": "Sasha2k1",
+      "Shortn": "Sasha",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "shrederman36": {
+      "Name": "shrederman36",
+      "Shortn": "ShrdrMan",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Anonimu007": {
+      "Name": "Anonimu007",
+      "Shortn": "Anonimu",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Dontkillmeplz7": {
+      "Name": "Dontkillmeplz7",
+      "Shortn": "DntKllMePlz",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "UpsideDownSmore": {
+      "Name": "UpsideDownSmore",
+      "Shortn": "UpsdDwnSmore",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "KoiPhish": {
+      "Name": "KoiPhish",
+      "Shortn": "KoiPhsh",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Bento_Tentacle": {
+      "Name": "Bento_Tentacle",
+      "Shortn": "BentoTntcl",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "_PhantomXKiller_": {
+      "Name": "_PhantomXKiller_",
+      "Shortn": "PhntmXKillr",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "LUCas696": {
+      "Name": "LUCas696",
+      "Shortn": "Lucas696",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Rafei": {
+      "Name": "Rafei",
+      "Shortn": "Rafei",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "EpicDoootMan69_27": {
+      "Name": "EpicDoootMan69_27",
+      "Shortn": "EpicDoootMan",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "DaNi11BoSs2": {
+      "Name": "DaNi11BoSs2",
+      "Shortn": "DaniBoss",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Mystic41": {
+      "Name": "Mystic41",
+      "Shortn": "Mystc",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "Boostyyy": {
+      "Name": "Boostyyy",
+      "Shortn": "Boostyy",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "HK47Grizzlybeer": {
+      "Name": "HK47Grizzlybeer",
+      "Shortn": "HkGrizzlybeer",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "NeoSniper12": {
+      "Name": "NeoSniper12",
+      "Shortn": "NeoSnpr",
+      "Rank": "Unknown",
+      "RankInt": 0
+    },
+    "PaintedRose": {
+      "Name": "PaintedRose",
+      "Shortn": "PntedRose",
+      "Rank": "Unknown",
+      "RankInt": 0
+    }
+  }
+}
