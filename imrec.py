@@ -35,18 +35,18 @@ def screenshot(param="None", save=False):
     nft = param.lower()
 
     if nft == "sun":
-        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - 800, 450, 250, 250))
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (800/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
 
     elif nft == "moon":
-        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 212, 450, 250, 250))
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (212/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
 
 
     if nft == "suns":
-        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - 580, 240, 150, 70))
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
         #screenshot.save("suns.png")
 
     elif nft == "moons":
-        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 430, 240, 150, 70))
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
         #screenshot.save("moons.png")
 
 
@@ -158,7 +158,7 @@ def getScore(args=None, ascreenshot = None):
         ascreenshot.save("b.png")
 
         text = reader.readtext(np.array(ascreenshot))
-        
+
         try:
             return text[0][1]
         except:
