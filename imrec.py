@@ -80,7 +80,7 @@ def getPlayers(args=None):
 
         #Try to run it through the database aswell
 
-        ftext = f"M:"
+        ftext = f"🌙: "
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
@@ -97,7 +97,7 @@ def getPlayers(args=None):
 
         # Try to run it through the database aswell
 
-        ftext = f"S:"
+        ftext = f"☀️: "
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
