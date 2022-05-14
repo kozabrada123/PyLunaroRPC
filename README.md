@@ -22,7 +22,6 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## Prerequisites
 
 * Python 3.7+
-* **A working install of tesseract** (To be changed in future, for now this makes it only work on Windows)
 * Some willingness to mess around with Discord
 
 
@@ -31,7 +30,6 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 
 - First, download or git clone this repo.
 - Install the python requirements with `pip3 install -r requirements.txt`
-- Install Tesseract and copy it's folder (usually `C:\Program Files\Tesseract-OCR`) to Dependencies. (File structure should look like `PyLunaroTracker/Dependencies/Tesseract-OCR/tesseract.exe`)
 - Go to [Discord Developer Portal](https://discord.com/developers/applications)
 - Create an app called "Warframe: Lunaro" or whatever you want it to be named
 - Copy the Application Id of the app
