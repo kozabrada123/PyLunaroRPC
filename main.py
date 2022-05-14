@@ -1,6 +1,8 @@
 from queue import Queue
 from threading import Thread
 
+import colorama
+
 import cv2
 
 import settings
@@ -32,7 +34,8 @@ def update_status(out_queue):
     sun = f"{imrec.getPlayers('sun')}"
     moon = f"{imrec.getPlayers('moon')}"
     pres.updatePresence(sun, moon)
-    print("Updated Status!")
+    #print("Updated Status!")
+    print(f"{colorama.Fore.CYAN}Moon: {moon}; {colorama.Fore.YELLOW}Sun: {sun}")
     out_queue.put([sun, moon])
 
 
@@ -56,6 +59,7 @@ def keep_status_alive(in_queue):
 
 
 def continuously_update_status(out_queue):
+    print(f"{colorama.Fore.CYAN}Outside of Game")
     pres.updatePresence("Outside of game..", "")
     out_queue.put(["Outside of game..", ""])
 
@@ -68,7 +72,7 @@ q = Queue()
 t1 = Thread(target = keep_status_alive, args =(q, ))
 t2 = Thread(target = continuously_update_status, args =(q, ))
 
-t3 = Thread(target = run_callbacks,)
+t3 = Thread(target = run_callbacks)
 
 t1.start()
 t2.start()

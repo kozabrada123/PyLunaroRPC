@@ -112,7 +112,7 @@ class LunaroPlayers:
             self.load()
 
 
-        print("Finding player " + str(name))
+        #print("Finding player " + str(name))
 
         diff = {}
 

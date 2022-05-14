@@ -50,11 +50,13 @@ class presenceManager:
         self.app.run_callbacks()
 
 
-    def debugCallback(self, result):
+    def debugCallback(self, result, something=None):
         if result == dsdk.Result.ok:
-            print("Successfully set the activity!")
+            #print("Successfully set the activity!")
+            pass
         else:
-            raise Exception(result)
+            #print(result)
+            pass
 
     def stop(self):
         self.RPC.close()
