@@ -5,16 +5,20 @@ import keyboard
 import string
 import lunaroplayers
 
+import cv2
+import easyocr
+
+import numpy as np
 
 
-import pytesseract
+#import pytesseract
 
-pytesseract.pytesseract.tesseract_cmd = r'Dependencies/Tesseract-OCR/tesseract.exe'
+#pytesseract.pytesseract.tesseract_cmd = r'Dependencies/Tesseract-OCR/tesseract.exe'
 hotkey = 'o'
 
 lplayers = lunaroplayers.LunaroPlayers()
 
-def screenshot(param="None", save=True):
+def screenshot(param="None", save=False):
     """
     Screenshots the screen.
     :param str nft: "Sun 1-3" or "Moon 1-3"
@@ -62,38 +66,46 @@ def screenshot(param="None", save=True):
         return sun, moon
 
 
-def getSunPlayers():
 
-    text = pytesseract.image_to_string(screenshot("sun"))
 
-    #Try to run it through the database aswell
-    try:
-        ftext = f"S:"
+
+def getPlayers(args=None):
+
+    if args == "moon":
+
+        reader = easyocr.Reader(['en'])
+        text = reader.readtext(np.array(screenshot("moon")))
+        #print(text)
         fa = []
-        for player in text.split():
-            fa.append(lplayers.TryFindByName(player)['Shortn'])
-        ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
-        return ftext
-    except:
-        return text
 
+        #Try to run it through the database aswell
 
-
-def getMoonPlayers():
-
-    text = pytesseract.image_to_string(screenshot("moon"))
-
-
-    #Try to run it through the database aswell
-    try:
         ftext = f"M:"
-        fa = []
-        for player in text.split():
-            fa.append(lplayers.TryFindByName(player)['Shortn'])
-        oftext += str(fa).replace("[", "").replace("]", "").replace("'","")
+        for player in text:
+            fa.append(lplayers.TryFindByName(player[1])['Shortn'])
+        ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
+        #print(ftext)
         return ftext
-    except:
-        return text
+
+
+    elif args == "sun":
+
+        reader = easyocr.Reader(['en'])
+        text = reader.readtext(np.array(screenshot("sun")))
+        #print(text)
+        fa = []
+
+        # Try to run it through the database aswell
+
+        ftext = f"S:"
+        for player in text:
+            fa.append(lplayers.TryFindByName(player[1])['Shortn'])
+        ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
+        #print(ftext)
+        return ftext
+
+    else:
+        return None
 
 
 def wait(debug=False):

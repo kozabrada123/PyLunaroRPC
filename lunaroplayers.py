@@ -80,7 +80,7 @@ class LunaroPlayers:
         if self.lunaroset == None:
             self.load()
 
-        print("Finding player " + name)
+        print("Finding player " + str(name))
 
         diff = {}
 

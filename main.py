@@ -1,6 +1,8 @@
 from queue import Queue
 from threading import Thread
 
+import cv2
+
 import settings
 
 _sentinel = object()
@@ -22,8 +24,8 @@ pres.startPresence()
 
 
 def update_status(out_queue):
-    sun = f"{imrec.getSunPlayers()}"
-    moon = f"{imrec.getMoonPlayers()}"
+    sun = f"{imrec.getPlayers('sun')}"
+    moon = f"{imrec.getPlayers('moon')}"
     pres.updatePresence(sun, moon)
     print("Updated Status!")
     out_queue.put([sun, moon])
@@ -50,7 +52,7 @@ def continuously_update_status(out_queue):
     pres.updatePresence("Outside of game..", None)
     out_queue.put(["Outside of game..", None])
 
-    keyboard.add_hotkey(settings.hotkey, lambda: update_status(out_queue))
+    keyboard.add_hotkey(f'Tab+{settings.hotkey}', lambda: update_status(out_queue))
     keyboard.wait()
 
 
