@@ -41,9 +41,18 @@ def screenshot(param="None", save=False):
         screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 212, 450, 250, 250))
 
 
+    if nft == "suns":
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - 580, 240, 150, 70))
+        #screenshot.save("suns.png")
+
+    elif nft == "moons":
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 430, 240, 150, 70))
+        #screenshot.save("moons.png")
 
 
-    if nft not in ["sun", "moon", "sun1", "sun2", "sun3", "moon1", "moon2", "moon3"]:
+
+
+    if nft not in ["sun", "moon", "moons", "suns"]:
         sun = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - 800, 450, 250, 250))
 
         moon = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 212, 450, 250, 250))
@@ -83,7 +92,7 @@ def getPlayers(args=None, ascreenshot = None):
 
         #Try to run it through the database aswell
 
-        ftext = f"🌙: "
+        ftext = f""
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
@@ -106,12 +115,54 @@ def getPlayers(args=None, ascreenshot = None):
 
         # Try to run it through the database aswell
 
-        ftext = f"☀️: "
+        ftext = f""
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         #print(ftext)
         return ftext
+
+    else:
+        return None
+
+def getScore(args=None, ascreenshot = None):
+
+    if args == "moon":
+
+
+            reader = easyocr.Reader(['en'])
+
+            if ascreenshot == None:
+                ascreenshot = screenshot("moons")
+
+            ascreenshot.save("a.png")
+
+            text = reader.readtext(np.array(ascreenshot))
+            #print(text)
+
+            try:
+                return text[0][1]
+            except:
+                return 0
+
+
+
+
+    if args == "sun":
+
+        reader = easyocr.Reader(['en'])
+
+        if ascreenshot == None:
+            ascreenshot = screenshot("suns")
+
+        ascreenshot.save("b.png")
+
+        text = reader.readtext(np.array(ascreenshot))
+        
+        try:
+            return text[0][1]
+        except:
+            return 0
 
     else:
         return None
@@ -129,3 +180,7 @@ def wait(debug=False):
         return screenshot(save=True)
     else:
         return screenshot()
+
+
+screenshot("suns")
+screenshot("moons")
