@@ -41,6 +41,7 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## Usage:
 
 - Start the program with `python3 main.py`
+- (**Make sure to launch LunaroRPC before Warframe**)
 - Launch Warframe
 - Go into a game of lunaro
 - Press 'o' (default hotkey, can be changed) while holding TAB
@@ -50,7 +51,6 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 
 - `No package .. was found` - This usually means you haven't installed the requirements correctly, try manually installing the library with pip
 
-- `NameError: name 'YOURAPPIDHERE' is not defined` - you haven't set your AppId
 
 - Can't see presence on profile - This usually means you haven't enabled Game Activity in Discord Settings (`Settings/Activity Status/Display current activity as status message`). If you have, try to exit any other running games or try to turn Game Activity On and Off. 
 
