@@ -16,7 +16,7 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
   - [Getting Started](#getting-started)
   - [Usage](#usage)
   - [Troubleshooting](#troubleshooting-and-common-issues)
-  - [Todo](TO:DO-And-Future-Updates-To-Excpect)
+  - [Todo](#to:do-and-future-updates-to-excpect)
 
 
 
