@@ -1,13 +1,13 @@
 # PyLunaroRPC
 A simple tool for Warframe Lunaro which shows players in the match on your profile with Discord RPC.
 
-![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroTracker)
-![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroTracker)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/kozabrada123/PyLunaroTracker)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kozabrada123/PyLunaroTracker)
-![GitHub issues](https://img.shields.io/github/issues/kozabrada123/PyLunaroTracker)
-![GitHub last commit](https://img.shields.io/github/last-commit/kozabrada123/PyLunaroTracker)
-![LOC](https://img.shields.io/tokei/lines/github/kozabrada123/PyLunaroTracker)
+![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroRPC)
+![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroRPC)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/kozabrada123/PyLunaroRPC)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kozabrada123/PyLunaroRPC)
+![GitHub issues](https://img.shields.io/github/issues/kozabrada123/PyLunaroRPC)
+![GitHub last commit](https://img.shields.io/github/last-commit/kozabrada123/PyLunaroRPC)
+![LOC](https://img.shields.io/tokei/lines/github/kozabrada123/PyLunaroRPC)
 
 
 
