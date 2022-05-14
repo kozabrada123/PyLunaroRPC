@@ -1,6 +1,8 @@
 from queue import Queue
 from threading import Thread
 
+import settings
+
 _sentinel = object()
 
 import time
@@ -48,7 +50,7 @@ def continuously_update_status(out_queue):
     pres.updatePresence("Outside of game..", None)
     out_queue.put(["Outside of game..", None])
 
-    keyboard.add_hotkey('o', lambda: update_status(out_queue))
+    keyboard.add_hotkey(settings.hotkey, lambda: update_status(out_queue))
     keyboard.wait()
 
 

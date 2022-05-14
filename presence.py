@@ -1,5 +1,6 @@
 import threading
 import time
+import settings
 
 import pypresence
 
@@ -11,7 +12,7 @@ class presenceManager:
 
 
     def startPresence(self):
-        self.RPC = pypresence.Presence(client_id=YOURCLIENTID)
+        self.RPC = pypresence.Presence(client_id=settings.appid)
         self.RPC.connect()
 
     def updatePresence(self, sun, moon):

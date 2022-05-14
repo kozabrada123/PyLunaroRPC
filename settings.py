@@ -1,0 +1,2 @@
+appid = YOURAPPIDHERE
+hotkey = 'o'
