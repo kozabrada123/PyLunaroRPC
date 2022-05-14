@@ -35,8 +35,8 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 - Go to [Discord Developer Portal](https://discord.com/developers/applications)
 - Create an app called "Warframe: Lunaro" or whatever you want it to be named
 - Copy the Application Id of the app
-- Go into `presence.py`
-- In line 14, `self.RPC = pypresence.Presence(client_id=YOURCLIENTID)`, set `YOURCLIENTID` to the client id from the Discord Developer App you made.
+- Go into `settings.py`
+- In line 1, `appid = YOUAPPIDHERE`, set `YOURAPPIDHERE` to the client id from the Discord Developer App you made.
 - Everything should now be set up!
 
 ## Usage:
