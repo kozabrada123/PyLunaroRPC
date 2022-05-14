@@ -58,4 +58,3 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## TO-DO And Future Updates To Excpect
 
 - **At least basic Ui**
-- **Implementation with the Discord Game SDK**
