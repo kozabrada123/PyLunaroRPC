@@ -69,12 +69,15 @@ def screenshot(param="None", save=False):
 
 
 
-def getPlayers(args=None):
+def getPlayers(args=None, ascreenshot = None):
 
     if args == "moon":
 
         reader = easyocr.Reader(['en'])
-        text = reader.readtext(np.array(screenshot("moon")))
+        if ascreenshot == None:
+            ascreenshot = screenshot("moon")
+
+        text = reader.readtext(np.array(ascreenshot))
         #print(text)
         fa = []
 
@@ -88,11 +91,17 @@ def getPlayers(args=None):
         return ftext
 
 
-    elif args == "sun":
+    if args == "sun":
 
         reader = easyocr.Reader(['en'])
-        text = reader.readtext(np.array(screenshot("sun")))
-        #print(text)
+
+        if ascreenshot == None:
+            ascreenshot = screenshot("sun")
+
+        text = reader.readtext(np.array(ascreenshot))
+
+        # print(text)
+
         fa = []
 
         # Try to run it through the database aswell

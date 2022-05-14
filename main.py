@@ -31,8 +31,10 @@ def run_callbacks():
 
 
 def update_status(out_queue):
-    sun = f"{imrec.getPlayers('sun')}"
-    moon = f"{imrec.getPlayers('moon')}"
+    sun_screenshot = imrec.screenshot("sun")
+    moon_screenshot = imrec.screenshot("moon")
+    sun = f"{imrec.getPlayers('sun', sun_screenshot)}"
+    moon = f"{imrec.getPlayers('moon', moon_screenshot)}"
     pres.updatePresence(sun, moon)
     #print("Updated Status!")
     print(f"{colorama.Fore.CYAN}Moon: {moon}; {colorama.Fore.YELLOW}Sun: {sun}")
