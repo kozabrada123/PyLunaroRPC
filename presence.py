@@ -11,7 +11,7 @@ class presenceManager:
 
 
     def startPresence(self):
-        self.RPC = pypresence.Presence(client_id=970782366815641620)
+        self.RPC = pypresence.Presence(client_id=YOURCLIENTID)
         self.RPC.connect()
 
     def updatePresence(self, sun, moon):
