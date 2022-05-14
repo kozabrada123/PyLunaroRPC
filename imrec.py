@@ -82,7 +82,7 @@ def getPlayers(args=None):
 
         ftext = f"M:"
         for player in text:
-            fa.append(lplayers.TryFindByName(player[1])['Shortn'])
+            fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
         #print(ftext)
         return ftext
@@ -99,7 +99,7 @@ def getPlayers(args=None):
 
         ftext = f"S:"
         for player in text:
-            fa.append(lplayers.TryFindByName(player[1])['Shortn'])
+            fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         #print(ftext)
         return ftext
