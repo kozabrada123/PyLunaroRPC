@@ -30,17 +30,12 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## Getting Started
 
 - First, download or git clone this repo.
-- Install the python requirements with `pip3 install -r requirements.txt`
-- ~~Go to [Discord Developer Portal](https://discord.com/developers/applications)~~
-~~- Create an app called "Warframe: Lunaro" or whatever you want it to be named~~
-~~- Copy the Application Id of the app~~
-~~- Go into `settings.py`~~
-~~- In line 1, `appid = YOUAPPIDHERE`, set `YOURAPPIDHERE` to the client id from the Discord Developer App you made.~~
+- Install the python requirements with `pip3 -r requirements.txt`.
 - Everything should now be set up!
 
 ## Usage:
 
-- Start the program with `python3 main.py`
+- Start the program with `python3 main.py` (or `python main.py`)
 - (**Make sure to launch LunaroRPC before Warframe**)
 - Launch Warframe
 - Go into a game of lunaro
@@ -58,3 +53,4 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## TO-DO And Future Updates To Excpect
 
 - **At least basic Ui**
+- Windows binary (Soon TM)
