@@ -99,7 +99,7 @@ def getPlayers(args=None, ascreenshot = None):
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
-        settings.console.log(f"[blue] {colorama.Fore.BLUE} Found Moon Players! [/blue]")
+        settings.console.log(f"[blue] Found Moon Players! [/blue]")
         #print(ftext)
         return ftext
 
@@ -146,7 +146,7 @@ def getScore(args=None, ascreenshot = None):
             #print(text)
 
             try:
-                settings.console.log(f"[blue] {colorama.Fore.BLUE} Moon Score: {text[0][1]} [/blue]")
+                settings.console.log(f"[blue] Moon Score: {text[0][1]} [/blue]")
                 return text[0][1]
             except:
                 return 0
