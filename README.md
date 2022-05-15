@@ -1,8 +1,11 @@
-
+<p align="center">
  <img style="display: block; margin-left: auto; margin-right: auto; width:30%;" src="https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png" alt="project logo" width="30%"/>
+ </p>
 
-# PyLunaroRPC
+<h2 align="center"> PyLunaroRPC </h2>
 A simple tool for Lunaro in Warframe which shows current match data on your profile with Discord RPC.
+
+<br/>
 
 ![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroRPC?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroRPC?style=for-the-badge)
