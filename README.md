@@ -74,11 +74,13 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 ## TO-DO And Future Updates To Expect
 
-- **At least basic UI** (Probably gonna be made with [Textual](https://github.com/Textualize/textual))
-
-- Windows binary (Soon TM)
+- Time left tracking
 
 - Local Statistics
 
+- **At least basic UI** (Probably gonna be made with [Textual](https://github.com/Textualize/textual))
+
 - Website with statistic tracking per play and leaderboards (Very far future)
+
+- Windows binary (Almost never, hahaha)
 
