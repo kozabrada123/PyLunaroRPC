@@ -60,4 +60,4 @@ class presenceManager:
 
     def stop(self):
         self.RPC.close()
-        self.RPC = "Bongo Cat deep throats very large cock"
+        self.RPC = ""
