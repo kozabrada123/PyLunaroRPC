@@ -1,13 +1,15 @@
 # PyLunaroRPC
 A simple tool for Warframe Lunaro which shows players in the match on your profile with Discord RPC.
 
-![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroRPC)
-![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroRPC)
-![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/kozabrada123/PyLunaroRPC)
-![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kozabrada123/PyLunaroRPC)
-![GitHub issues](https://img.shields.io/github/issues/kozabrada123/PyLunaroRPC)
-![GitHub last commit](https://img.shields.io/github/last-commit/kozabrada123/PyLunaroRPC)
-![LOC](https://img.shields.io/tokei/lines/github/kozabrada123/PyLunaroRPC)
+![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![Github Commit Activity m](https://img.shields.io/github/commit-activity/m/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![GitHub last commit](https://img.shields.io/github/last-commit/kozabrada123/PyLunaroRPC?style=for-the-badge)
+![LOC](https://img.shields.io/tokei/lines/github/kozabrada123/PyLunaroRPC?style=for-the-badge)
 
 
 
@@ -16,13 +18,15 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
   - [Getting Started](#getting-started)
   - [Usage](#usage)
   - [Troubleshooting](#troubleshooting-and-common-issues)
-  - [Todo](#to-do-and-future-updates-to-excpect)
+ - [Todo](#to-do-and-future-updates-to-excpect)
 
 
 
 ## Prerequisites
 
 * Python 3.7+
+* Discord
+* Warframe to play lunaro
 
 
 ## Getting Started
@@ -37,7 +41,7 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 - (**Make sure to launch LunaroRPC before Warframe**)
 - Launch Warframe
 - Go into a game of lunaro
-- Press 'o' (default hotkey, can be changed) while holding TAB
+- Press 'o' (default hotkey, configurable in settings.py) while holding TAB
 - If everything is set up correctly, the players from both team should be visible on your profile.
 
 ## Troubleshooting and common issues:
@@ -46,6 +50,9 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 
 
 - Can't see presence on profile - This usually means you haven't enabled Game Activity in Discord Settings (`Settings/Activity Status/Display current activity as status message`). If you have, try to exit any other running games or try to turn Game Activity On and Off. 
+
+
+- Discord SDK Error 4 - this is an **internal server error, an error on Discord's side**. This means that I have no idea how to fix it.
 
 
 ## TO-DO And Future Updates To Excpect
