@@ -44,7 +44,7 @@ def update_status(out_queue):
     pres.updatePresence(sun, moon)
     #print("Updated Status!")
     #print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
-    settings.console.log(f"[cyan bold]{colorama.Fore.CYAN}{moon.replace('🌙','🌙 Moon')} [/cyan bold][yellow bold]{colorama.Fore.YELLOW}{sun.replace('☀️ ', '☀ Sun ')}[/yellow bold]")
+    settings.console.log(f"[cyan bold] {moon.replace('🌙','🌙 Moon')} [/cyan bold][yellow bold] {sun.replace('☀️ ', '☀ Sun ')}[/yellow bold]")
     out_queue.put([sun, moon])
 
 
@@ -69,7 +69,7 @@ def keep_status_alive(in_queue):
 
 def continuously_update_status(out_queue):
     #print(f"{colorama.Fore.CYAN}Outside of Game")
-    settings.console.log(f"[cyan]{colorama.Fore.CYAN} Outside of game.. [/cyan]")
+    settings.console.log(f"[cyan] Outside of game.. [/cyan]")
     pres.updatePresence("Outside of game..", "")
     out_queue.put(["Outside of game..", ""])
 
