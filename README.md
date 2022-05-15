@@ -16,6 +16,10 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 <br/>
 
 
+![No Windows Binaries](https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/44d0c6136a4a18850e5776e89010a690f6891714/assets/images/no-windows-binaries.svg)
+![Lunaro](https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/98189fcc19354dd62ea8f43dc8d8ad4ef6d6f41b/assets/images/lunaro.svg)
+
+<br/>
 
 - [PyLunaroTracker](#PyLunaroTracker)
   - [Prerequisites](#prerequisites)
