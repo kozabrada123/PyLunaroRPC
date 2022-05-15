@@ -23,8 +23,6 @@ A simple tool for Warframe Lunaro which shows players in the match on your profi
 ## Prerequisites
 
 * Python 3.7+
-* Some willingness to mess around with Discord
-
 
 
 ## Getting Started
