@@ -55,6 +55,8 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 - Discord SDK Error 4 - this is an **internal server error, an error on Discord's side**. This means that I have no idea how to fix it.
 
+- Problems with requirements - there might be mismatch between your python and pip, try running `python3 -m pip install -r requirements.txt` or `python -m pip install -r requirements.txt`.
+
 
 ## TO-DO And Future Updates To Excpect
 
