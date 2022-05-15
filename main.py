@@ -3,6 +3,8 @@ from threading import Thread
 
 import colorama
 
+import numpy as np
+
 import cv2
 
 import settings
@@ -32,12 +34,15 @@ def run_callbacks():
 
 
 def update_status(out_queue):
-    sun_screenshot = imrec.screenshot("sun")
-    moon_screenshot = imrec.screenshot("moon")
+    #wait 0.2s for tab to load
+    time.sleep(0.2)
+
+    sun_screenshot = np.array(imrec.screenshot("sun"))
+    moon_screenshot = np.array(imrec.screenshot("moon"))
 
     #+s == Score
-    suns_screenshot = imrec.screenshot("suns")
-    moons_screenshot = imrec.screenshot("moons")
+    suns_screenshot = np.array(imrec.screenshot("suns"))
+    moons_screenshot = np.array(imrec.screenshot("moons"))
 
     sun = f"☀️ {imrec.getScore('sun', suns_screenshot)}: {imrec.getPlayers('sun', sun_screenshot)}"
     moon = f"🌙 {imrec.getScore('moon', moons_screenshot)}: {imrec.getPlayers('moon', moon_screenshot)}"
@@ -62,7 +67,7 @@ def keep_status_alive(in_queue):
 
         if not (sun == None or moon == None):
             pres.updatePresence(sun, moon)
-        time.sleep(1/10)
+        time.sleep(0.2)
 
 
 
@@ -73,7 +78,7 @@ def continuously_update_status(out_queue):
     pres.updatePresence("Outside of game..", "")
     out_queue.put(["Outside of game..", ""])
 
-    keyboard.add_hotkey(f'Tab+{settings.hotkey}', lambda: update_status(out_queue))
+    keyboard.add_hotkey(f'Tab', lambda: update_status(out_queue))
     keyboard.wait()
 
 

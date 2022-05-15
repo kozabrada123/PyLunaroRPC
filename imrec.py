@@ -86,10 +86,10 @@ def getPlayers(args=None, ascreenshot = None):
     if args == "moon":
 
         reader = easyocr.Reader(['en'])
-        if ascreenshot == None:
-            ascreenshot = screenshot("moon")
+        #if ascreenshot == None:
+        #    ascreenshot = screenshot("moon")
 
-        text = reader.readtext(np.array(ascreenshot))
+        text = reader.readtext(ascreenshot)
         #print(text)
         fa = []
 
@@ -108,10 +108,8 @@ def getPlayers(args=None, ascreenshot = None):
 
         reader = easyocr.Reader(['en'])
 
-        if ascreenshot == None:
-            ascreenshot = screenshot("sun")
 
-        text = reader.readtext(np.array(ascreenshot))
+        text = reader.readtext(ascreenshot)
 
         # print(text)
 
@@ -135,21 +133,19 @@ def getScore(args=None, ascreenshot = None):
     if args == "moon":
 
 
-            reader = easyocr.Reader(['en'])
+        reader = easyocr.Reader(['en'])
 
-            if ascreenshot == None:
-                ascreenshot = screenshot("moons")
 
-            ascreenshot.save("a.png")
+        #ascreenshot.save("a.png")
 
-            text = reader.readtext(np.array(ascreenshot))
-            #print(text)
+        text = reader.readtext(ascreenshot)
+        #print(text)
 
-            try:
-                settings.console.log(f"[blue] Moon Score: {text[0][1]} [/blue]")
-                return text[0][1]
-            except:
-                return 0
+        try:
+            settings.console.log(f"[blue] Moon Score: {text[0][1]} [/blue]")
+            return text[0][1]
+        except:
+            return 0
 
 
 
@@ -158,12 +154,10 @@ def getScore(args=None, ascreenshot = None):
 
         reader = easyocr.Reader(['en'])
 
-        if ascreenshot == None:
-            ascreenshot = screenshot("suns")
 
-        ascreenshot.save("b.png")
+        #ascreenshot.save("b.png")
 
-        text = reader.readtext(np.array(ascreenshot))
+        text = reader.readtext(ascreenshot)
 
         try:
             #settings.console.log(f"[yellow] Sun Score: {text[0][1]} [/yellow]")
@@ -187,7 +181,3 @@ def wait(debug=False):
         return screenshot(save=True)
     else:
         return screenshot()
-
-
-screenshot("suns")
-screenshot("moons")
