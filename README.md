@@ -10,6 +10,12 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 ![GitHub issues](https://img.shields.io/github/issues/kozabrada123/PyLunaroRPC?style=for-the-badge)
 ![Libraries.io dependency status for GitHub repo](https://img.shields.io/librariesio/github/kozabrada123/PyLunaroRPC?style=for-the-badge)
 
+<br/>
+
+[![forthebadge](https://forthebadge.com/images/badges/contains-tasty-spaghetti-code.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/it-works-why.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/not-a-bug-a-feature.svg)](https://forthebadge.com)
+
 
 
 - [PyLunaroTracker](#PyLunaroTracker)
