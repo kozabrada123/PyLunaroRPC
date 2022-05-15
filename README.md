@@ -1,6 +1,5 @@
-<div style="text-align: center;">
-  <img style="display: block; margin-left: auto; margin-right: auto; width:30%;" src="https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png" alt="project logo" width="350"/>
- <div>
+
+ <img style="display: block; margin-left: auto; margin-right: auto; width:30%;" src="https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png" alt="project logo" width="30%"/>
 
 # PyLunaroRPC
 A simple tool for Lunaro in Warframe which shows current match data on your profile with Discord RPC.
