@@ -18,7 +18,7 @@ class LunaroPlayers:
 
     def connect(self):
         self.con = sqlite3.connect('lunaroplayers.db')
-        settings.console.log(f"[cyan] {colorama.Fore.CYAN} Connected to database.. [/cyan]")
+        settings.console.log(f"[cyan] Connected to database.. [/cyan]")
 
 
     def execute(self, toexec):
@@ -117,7 +117,7 @@ class LunaroPlayers:
 
         #print("Finding player " + str(name))
 
-        with settings.console.status(f"[green] {colorama.Fore.GREEN} Searching for player {name}.. [/green]"):
+        with settings.console.status(f"[green] Searching for player {name}.. [/green]"):
 
             diff = {}
 
@@ -136,9 +136,9 @@ class LunaroPlayers:
         if list(sorted_d.values())[0] > 0.5:
             #print(f"Returning {str(self.lunarosetraw[list(sorted_d.keys())[0]])}")
             found = self.lunarosetraw[list(sorted_d.keys())[0]]
-            settings.console.log(f"[green] {colorama.Fore.GREEN} Found player {found[0]} [/green]")
+            settings.console.log(f"[green] Found player {found[0]} [/green]")
             return found
         else:
             #print(f"Returning 'Name': {name}, 'Shortn': None, 'Rank': None, 'Rankint': None")
-            settings.console.log(f"[yellow] {colorama.Fore.YELLOW} Didn't find any known players for {name} [/yellow]")
+            settings.console.log(f"[yellow] Didn't find any known players for {name} [/yellow]")
             return [name, name, None, None]
