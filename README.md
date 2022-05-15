@@ -44,7 +44,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 - First, download or git clone this repo.
 - Install the python requirements with `pip3 -r requirements.txt`.
-- Everything should now be set up!
+- You're done!
 
 ## Usage:
 
@@ -53,27 +53,25 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 - Launch Warframe
 - Go into a game of lunaro
 - Press 'o' (default hotkey, configurable in settings.py) while holding TAB
-- If everything is set up correctly, the players from both team should be visible on your profile.
+- If nothing broke, game info should be processed and displayed on your profile.
 
 ## Troubleshooting and common issues:
 
-- `No package .. was found` - This usually means you haven't installed the requirements correctly, try manually installing the library with pip
+- `No package .. was found` - This means one of your requirements isn't properly installed.
 
 
-- Can't see presence on profile - This usually means you haven't enabled Game Activity in Discord Settings (`Settings/Activity Status/Display current activity as status message`). If you have, try to exit any other running games or try to turn Game Activity On and Off. 
+- If it doesn't show Lunaro as a running game on Discord, try turning game activity on and off.
 
 
-- Discord SDK Error 4 - this is an **internal server error, an error on Discord's side**. This means that I have no idea how to fix it.
+- Discord SDK Error 4 - this is an **internal server error on Discord's servers**. Usually, LunaroRPC keeps working.
 
-- Problems with requirements - there might be mismatch between your python and pip, try running `python3 -m pip install -r requirements.txt` or `python -m pip install -r requirements.txt`.
+- Problems with requirements - There might be a mismatch between your python and pip. Try running `python3 -m pip install -r requirements.txt` or `python -m pip install -r requirements.txt`.
 
 
-## TO-DO And Future Updates To Excpect
+## TO-DO And Future Updates To Expect
 
-- ~~**At least basic Ui**~~ - I've Tried, pls no
-
-If you submit a pull request for a working ui I'll take a look at it but I do not want to get my anus penetrated with trying to handle all the ui threads
+-**At least basic UI**
 
 - Windows binary (Soon TM)
 
-**↑ Both of these two things are incredibly cancerous to implement, I've tried working on both of them but I do not have the mental capactity to actually finish them.. Maybe one day** 
+**↑ I've tried working on both of these, but I don't have any experience with either.**
