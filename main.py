@@ -21,6 +21,7 @@ sun = None
 moon = None
 
 
+
 pres = presence.presenceManager()
 pres.startPresence()
 
@@ -42,7 +43,8 @@ def update_status(out_queue):
     moon = f"🌙 {imrec.getScore('moon', moons_screenshot)}: {imrec.getPlayers('moon', moon_screenshot)}"
     pres.updatePresence(sun, moon)
     #print("Updated Status!")
-    print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
+    #print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
+    settings.console.log(f"[cyan bold]{colorama.Fore.CYAN}{moon.replace('🌙','🌙 Moon')} [/cyan bold][yellow bold]{colorama.Fore.YELLOW}{sun.replace('☀️ ', '☀ Sun ')}[/yellow bold]")
     out_queue.put([sun, moon])
 
 
@@ -66,7 +68,8 @@ def keep_status_alive(in_queue):
 
 
 def continuously_update_status(out_queue):
-    print(f"{colorama.Fore.CYAN}Outside of Game")
+    #print(f"{colorama.Fore.CYAN}Outside of Game")
+    settings.console.log(f"[cyan]{colorama.Fore.CYAN} Outside of game.. [/cyan]")
     pres.updatePresence("Outside of game..", "")
     out_queue.put(["Outside of game..", ""])
 
@@ -76,12 +79,16 @@ def continuously_update_status(out_queue):
 
 q = Queue()
 
+q.put(["", ""])
+
 t1 = Thread(target = keep_status_alive, args =(q, ))
 t2 = Thread(target = continuously_update_status, args =(q, ))
 
 t3 = Thread(target = run_callbacks)
 
+
 t1.start()
 t2.start()
 
 t3.start()
+

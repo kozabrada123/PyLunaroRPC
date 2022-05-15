@@ -5,6 +5,9 @@ import random
 import sqlite3
 
 import Levenshtein
+import colorama
+
+import settings
 
 class LunaroPlayers:
     def __init__(self):
@@ -15,6 +18,7 @@ class LunaroPlayers:
 
     def connect(self):
         self.con = sqlite3.connect('lunaroplayers.db')
+        settings.console.log(f"[cyan] {colorama.Fore.CYAN} Connected to database.. [/cyan]")
 
 
     def execute(self, toexec):
@@ -84,7 +88,6 @@ class LunaroPlayers:
 
 
 
-
         diff = {}
 
         for player in self.lunaroset:
@@ -114,23 +117,28 @@ class LunaroPlayers:
 
         #print("Finding player " + str(name))
 
-        diff = {}
+        with settings.console.status(f"[green] {colorama.Fore.GREEN} Searching for player {name}.. [/green]"):
 
-        for player in self.load():
-            #print(player[0])
-            diff[player[0]] = Levenshtein.ratio(name, player[0])
-        #Get levenshtein for all of them
+            diff = {}
+
+            for player in self.load():
+                #print(player[0])
+                diff[player[0]] = Levenshtein.ratio(name, player[0])
+            #Get levenshtein for all of them
 
 
-        #Sort by closest
-        sorted_d = dict(sorted(diff.items(), key=lambda item: item[1], reverse=True))
+            #Sort by closest
+            sorted_d = dict(sorted(diff.items(), key=lambda item: item[1], reverse=True))
 
-        #Return the one with the lowest levenshtein
-        #Return the json object by finding the closest one by name
+            #Return the one with the lowest levenshtein
+            #Return the json object by finding the closest one by name
 
         if list(sorted_d.values())[0] > 0.5:
             #print(f"Returning {str(self.lunarosetraw[list(sorted_d.keys())[0]])}")
-            return self.lunarosetraw[list(sorted_d.keys())[0]]
+            found = self.lunarosetraw[list(sorted_d.keys())[0]]
+            settings.console.log(f"[green] {colorama.Fore.GREEN} Found player {found[0]} [/green]")
+            return found
         else:
             #print(f"Returning 'Name': {name}, 'Shortn': None, 'Rank': None, 'Rankint': None")
+            settings.console.log(f"[yellow] {colorama.Fore.YELLOW} Didn't find any known players for {name} [/yellow]")
             return [name, name, None, None]
