@@ -1,5 +1,5 @@
 # PyLunaroRPC
-A simple tool for Warframe Lunaro which shows players in the match on your profile with Discord RPC.
+A simple tool for Lunaro in Warframe which shows current match data on your profile with Discord RPC.
 
 ![GitHub](https://img.shields.io/github/license/kozabrada123/PyLunaroRPC?style=for-the-badge)
 ![GitHub top language](https://img.shields.io/github/languages/top/kozabrada123/PyLunaroRPC?style=for-the-badge)
