@@ -36,6 +36,9 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 * Discord
 * Warframe to play lunaro
 
+<br/>
+
+* **Currently running on Linux is a bit of a pain, because Keyboard needs Sudo**
 
 ## Getting Started
 
