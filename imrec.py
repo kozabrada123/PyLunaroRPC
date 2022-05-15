@@ -1,5 +1,6 @@
 import random
 
+import colorama
 import pyautogui
 import keyboard
 import string
@@ -9,6 +10,8 @@ import cv2
 import easyocr
 
 import numpy as np
+
+import settings
 
 
 #import pytesseract
@@ -96,6 +99,7 @@ def getPlayers(args=None, ascreenshot = None):
         for player in text:
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
+        settings.console.log(f"[blue] {colorama.Fore.BLUE} Found Moon Players! [/blue]")
         #print(ftext)
         return ftext
 
@@ -120,6 +124,7 @@ def getPlayers(args=None, ascreenshot = None):
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         #print(ftext)
+        settings.console.log(f"[yellow] {colorama.Fore.YELLOW} Found Sun Players! [/yellow]")
         return ftext
 
     else:
@@ -141,6 +146,7 @@ def getScore(args=None, ascreenshot = None):
             #print(text)
 
             try:
+                settings.console.log(f"[blue] {colorama.Fore.BLUE} Moon Score: {text[0][1]} [/blue]")
                 return text[0][1]
             except:
                 return 0
@@ -160,6 +166,7 @@ def getScore(args=None, ascreenshot = None):
         text = reader.readtext(np.array(ascreenshot))
 
         try:
+            #settings.console.log(f"[yellow] Sun Score: {text[0][1]} [/yellow]")
             return text[0][1]
         except:
             return 0
