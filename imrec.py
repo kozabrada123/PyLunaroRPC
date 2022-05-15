@@ -124,7 +124,7 @@ def getPlayers(args=None, ascreenshot = None):
             fa.append(lplayers.TryFindByName(player[1])[1])
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         #print(ftext)
-        settings.console.log(f"[yellow] {colorama.Fore.YELLOW} Found Sun Players! [/yellow]")
+        settings.console.log(f"[yellow] Found Sun Players! [/yellow]")
         return ftext
 
     else:
