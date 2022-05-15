@@ -75,3 +75,5 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 If you submit a pull request for a working ui I'll take a look at it but I do not want to get my anus penetrated with trying to handle all the ui threads
 
 - Windows binary (Soon TM)
+
+**↑ Both of these two things are incredibly cancerous to implement, I've tried working on both of them but I do not have the mental capactity to actually finish them.. Maybe one day** 
