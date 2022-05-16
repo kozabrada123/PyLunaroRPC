@@ -24,7 +24,7 @@ class presenceManager:
         self.RPC = dsdk.Activity()
         self.RPC.details = f"{self.sun}"
         self.RPC.state = f"{self.moon}"
-        self.RPC.assets.small_image = "https://i.ibb.co/f4xwkTm/Lunaro-logo-pog.png"
+        self.RPC.assets.small_image = "https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png"
 
         self.RPC_Manager.update_activity(self.RPC, lambda result: self.debugCallback("update_activity", result))
 
