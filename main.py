@@ -33,9 +33,12 @@ def run_callbacks():
         pres.runCallbacks()
 
 
-def update_status(out_queue):
+def update_status(out_queue, tstart_queue):
     #wait 0.2s for tab to load
     time.sleep(0.2)
+
+    #Start time updating
+    tstart_queue.put(True)
 
     sun_screenshot = np.array(imrec.screenshot("sun"))
     moon_screenshot = np.array(imrec.screenshot("moon"))
@@ -72,28 +75,54 @@ def keep_status_alive(in_queue):
 
 
 
-def continuously_update_status(out_queue):
+def continuously_update_status(out_queue, tstart_queue):
     #print(f"{colorama.Fore.CYAN}Outside of Game")
     settings.console.log(f"[cyan] Outside of game.. [/cyan]")
     pres.updatePresence("Outside of game..", "")
     out_queue.put(["Outside of game..", ""])
 
-    keyboard.add_hotkey(f'Tab', lambda: update_status(out_queue))
+    keyboard.add_hotkey(f'Tab', lambda: update_status(out_queue, tstart_queue))
     keyboard.wait()
 
 
+def fetch_time(start_queue):
+    while True:
+        #if start_queue.get == True:
+        if True:
+            try:
+                tscreenshot = np.array(imrec.screenshot("time"))
+
+
+                endt = imrec.getEndTimeEpoch(tscreenshot)
+
+                pres.updateTime(endt)
+
+
+            except: pass
+
+            time.sleep(5)
+            #only need get time every 2s
+
+
+
+#General queue
 q = Queue()
+
+#Time queues
+tstart_queue = Queue()
 
 q.put(["", ""])
 
 t1 = Thread(target = keep_status_alive, args =(q, ))
-t2 = Thread(target = continuously_update_status, args =(q, ))
+t2 = Thread(target = continuously_update_status, args =(q, tstart_queue, ))
+
 
 t3 = Thread(target = run_callbacks)
-
+timet = Thread(target = fetch_time, args=(tstart_queue, ))
 
 t1.start()
 t2.start()
 
 t3.start()
+timet.start()
 

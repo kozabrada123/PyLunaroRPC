@@ -1,4 +1,5 @@
 import random
+import time
 
 import colorama
 import pyautogui
@@ -38,24 +39,31 @@ def screenshot(param="None", save=False):
     nft = param.lower()
 
     if nft == "sun":
+
         screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (800/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
 
     elif nft == "moon":
+
         screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (212/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
 
 
     if nft == "suns":
+
         screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
-        #screenshot.save("suns.png")
+
 
     elif nft == "moons":
+
         screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
-        #screenshot.save("moons.png")
 
 
 
+    if nft == "time":
 
-    if nft not in ["sun", "moon", "moons", "suns"]:
+        screenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
+
+    if nft not in ["sun", "moon", "moons", "suns", "time"]:
+
         sun = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - 800, 450, 250, 250))
 
         moon = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 212, 450, 250, 250))
@@ -128,6 +136,10 @@ def getPlayers(args=None, ascreenshot = None):
     else:
         return None
 
+
+
+
+
 def getScore(args=None, ascreenshot = None):
 
     if args == "moon":
@@ -169,6 +181,28 @@ def getScore(args=None, ascreenshot = None):
         return None
 
 
+def getEndTimeEpoch(time_screenshot_array):
+
+    reader = easyocr.Reader(['en'])
+    text = reader.readtext(time_screenshot_array)
+
+    m_s = text[0][1].split(".")
+
+    secs = int(m_s[1])
+
+    secs += int(m_s[0]) * 60
+
+    #try:
+    settings.console.log(f"[cyan]Remaining time: {text[0][1]} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
+
+    return int(time.time()) + secs
+
+    #except:
+    #    return None
+
+
+
+
 def wait(debug=False):
     """
     Waits until hotkey pressed and then screenshots
@@ -181,3 +215,6 @@ def wait(debug=False):
         return screenshot(save=True)
     else:
         return screenshot()
+
+
+#a = print(getEndTimeEpoch(np.array(screenshot("time"))))

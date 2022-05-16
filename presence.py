@@ -46,6 +46,14 @@ class presenceManager:
         self.RPC_Manager.update_activity(self.RPC, self.debugCallback)
 
 
+    def updateTime(self, time):
+        settings.console.log("Updating time")
+        self.endt = time
+        self.RPC.timestamps.end = self.endt
+
+        self.RPC_Manager.update_activity(self.RPC, self.debugCallback)
+
+
     def runCallbacks(self):
         self.app.run_callbacks()
 
