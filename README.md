@@ -61,6 +61,9 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 ## Troubleshooting and common issues:
 
+
+- `CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.` - The most common issue, you can install [Nvidia CUDA](https://developer.nvidia.com/cuda-toolkit) to silence this error and make LunaroRPC run much faster. (Side note: many people may have problems installing CUDA, try to refer to [this](https://forums.developer.nvidia.com/t/windows-10-cuda-installation-failure-solved/64389)) 
+
 - `No package .. was found` - This means one of your requirements isn't properly installed.
 
 
