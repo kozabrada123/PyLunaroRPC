@@ -69,6 +69,9 @@ def screenshot(param="None", save=False):
         moon = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + 212, 450, 250, 250))
 
 
+    settings.console.log(f"Screenshotted {nft}")
+
+
     if save:
         try:
             screenshot.save("debug.png")

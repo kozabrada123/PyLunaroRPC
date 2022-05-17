@@ -6,6 +6,7 @@ import colorama
 import numpy as np
 
 import cv2
+import pyautogui
 
 import settings
 
@@ -40,15 +41,20 @@ def update_status(out_queue, tstart_queue):
     #Start time updating
     tstart_queue.put(True)
 
-    sun_screenshot = np.array(imrec.screenshot("sun"))
-    moon_screenshot = np.array(imrec.screenshot("moon"))
+    sun_screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (800/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
+
+    moon_screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (212/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
 
     #+s == Score
-    suns_screenshot = np.array(imrec.screenshot("suns"))
-    moons_screenshot = np.array(imrec.screenshot("moons"))
+    suns_screenshot =  pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
 
-    sun = f"☀️ {imrec.getScore('sun', suns_screenshot)}: {imrec.getPlayers('sun', sun_screenshot)}"
-    moon = f"🌙 {imrec.getScore('moon', moons_screenshot)}: {imrec.getPlayers('moon', moon_screenshot)}"
+    moons_screenshot =  pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
+
+
+    settings.console.log("[green] Safe to close tab.. [/green]")
+
+    sun = f"☀️ {imrec.getScore('sun', np.array(suns_screenshot))}: {imrec.getPlayers('sun', np.array(sun_screenshot))}"
+    moon = f"🌙 {imrec.getScore('moon', np.array(moons_screenshot))}: {imrec.getPlayers('moon', np.array(moon_screenshot))}"
     pres.updatePresence(sun, moon)
     #print("Updated Status!")
     #print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
@@ -90,10 +96,11 @@ def fetch_time(start_queue):
         #if start_queue.get == True:
         if True:
             try:
-                tscreenshot = np.array(imrec.screenshot("time"))
+                tscreenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
 
 
-                endt = imrec.getEndTimeEpoch(tscreenshot)
+
+                endt = imrec.getEndTimeEpoch(np.array(tscreenshot))
 
                 pres.updateTime(endt)
 
