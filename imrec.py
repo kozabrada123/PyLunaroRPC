@@ -94,50 +94,25 @@ def screenshot(param="None", save=False):
 
 def getPlayers(args=None, ascreenshot = None):
 
-    if args == "moon":
 
-        reader = easyocr.Reader(['en'])
-        #if ascreenshot == None:
-        #    ascreenshot = screenshot("moon")
-
-        text = reader.readtext(ascreenshot)
-        #print(text)
-        fa = []
-
-        #Try to run it through the database aswell
-
-        ftext = f""
-        for player in text:
-            fa.append(lplayers.TryFindByName(player[1])[1])
-        ftext += str(fa).replace("[", "").replace("]", "").replace("'","")
-        settings.console.log(f"[blue] Found Moon Players! [/blue]")
-        #print(ftext)
-        return ftext
+    reader = easyocr.Reader(['en'])
 
 
-    if args == "sun":
+    text = reader.readtext(ascreenshot)
 
-        reader = easyocr.Reader(['en'])
+    # print(text)
 
+    fa = []
 
-        text = reader.readtext(ascreenshot)
+    # Try to run it through the database aswell
 
-        # print(text)
-
-        fa = []
-
-        # Try to run it through the database aswell
-
-        ftext = f""
-        for player in text:
-            fa.append(lplayers.TryFindByName(player[1])[1])
-        ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
-        #print(ftext)
-        settings.console.log(f"[yellow] Found Sun Players! [/yellow]")
-        return ftext
-
-    else:
-        return None
+    ftext = f""
+    for player in text:
+        fa.append(lplayers.TryFindByName(player[1])[1])
+    ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
+    #print(ftext)
+    settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
+    return ftext
 
 
 
@@ -191,7 +166,7 @@ def getEndTimeEpoch(time_screenshot_array):
 
     m_s = text[0][1].split(".")
 
-    secs = int(m_s[1])
+    secs = int(m_s[1]) - 1 # -1 since we spend ~a second calculating this
 
     secs += int(m_s[0]) * 60
 

@@ -1,6 +1,10 @@
 from queue import Queue
 from threading import Thread
 
+import asyncio
+
+from PIL import Image
+
 import colorama
 
 import numpy as np
@@ -35,26 +39,69 @@ def run_callbacks():
 
 
 def update_status(out_queue, tstart_queue):
-    #wait 0.2s for tab to load
-    time.sleep(0.2)
+    #wait 0.5s for tab to load
+    time.sleep(0.5)
 
     #Start time updating
     tstart_queue.put(True)
 
-    sun_screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (800/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
+    screenshot = pyautogui.screenshot("sc.png")
+    screenshot = Image.open("sc.png")
 
-    moon_screenshot = pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (212/1920)*pyautogui.size()[0], (450/1080)*pyautogui.size()[1], (250/1920)*pyautogui.size()[0], (250/1080)*pyautogui.size()[1]))
+
+
+    sun_left = pyautogui.size()[0]/2 - (800/1920)*pyautogui.size()[0]#x
+    sun_upper = (450/1080)*pyautogui.size()[1]#y
+    sun_right = sun_left + ((250/1920)*pyautogui.size()[0])#x + width
+    sun_lower = sun_upper + (250/1080)*pyautogui.size()[1]#y + height
+
+    sun_screenshot = screenshot.crop((sun_left, sun_upper, sun_right, sun_lower))
+    sun_screenshot.save("sn.png")
+
+
+    moon_left = pyautogui.size()[0]/2 + (212/1920)* pyautogui.size()[0]#x
+    moon_upper = (450/1080)*pyautogui.size()[1]#y
+    moon_right = moon_left + (250/1920)* pyautogui.size()[0]#x + width
+    moon_lower = moon_upper + (250/1080)* pyautogui.size()[1]#y+ height
+
+    moon_screenshot = screenshot.crop((moon_left, moon_upper, moon_right, moon_lower))
+    moon_screenshot.save("mn.png")
 
     #+s == Score
-    suns_screenshot =  pyautogui.screenshot(region=(pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
+    suns_left = pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0]#x
+    suns_upper = (240/1080)*pyautogui.size()[1]#y
+    suns_right = suns_left + (150/1920)*pyautogui.size()[0]#x + width
+    suns_lower = suns_upper + (70/1080)*pyautogui.size()[1]#y + height
 
-    moons_screenshot =  pyautogui.screenshot(region=(pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0], (240/1080)*pyautogui.size()[1], (150/1920)*pyautogui.size()[0], (70/1080)*pyautogui.size()[1]))
+    suns_screenshot = screenshot.crop((suns_left, suns_upper, suns_right, suns_lower))
 
+
+    moons_left = pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0]#x
+    moons_upper = (240/1080)*pyautogui.size()[1]#y
+    moons_right = moons_left + (150/1920)*pyautogui.size()[0]#x + width
+    moons_lower = moons_upper + (70/1080)*pyautogui.size()[1]#y + height
+
+    moons_screenshot = screenshot.crop((moons_left, moons_upper, moons_right, moons_lower))
+
+
+
+    #if settings.auto:
+    #    keyboard.release("Tab")
 
     settings.console.log("[green] Safe to close tab.. [/green]")
 
-    sun = f"☀️ {imrec.getScore('sun', np.array(suns_screenshot))}: {imrec.getPlayers('sun', np.array(sun_screenshot))}"
-    moon = f"🌙 {imrec.getScore('moon', np.array(moons_screenshot))}: {imrec.getPlayers('moon', np.array(moon_screenshot))}"
+    sun_players = imrec.getPlayers('sun', np.array(sun_screenshot))
+
+    moon_players = imrec.getPlayers('moon', np.array(moon_screenshot))
+
+    sscore =imrec.getScore('sun', np.array(suns_screenshot))
+
+    mscore = imrec.getScore('moon', np.array(moons_screenshot))
+
+
+
+    sun = f"☀️ {sscore}: {sun_players}"
+    moon = f"🌙 {mscore}: {moon_players}"
     pres.updatePresence(sun, moon)
     #print("Updated Status!")
     #print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
@@ -91,10 +138,10 @@ def continuously_update_status(out_queue, tstart_queue):
     keyboard.wait()
 
 
-def fetch_time(start_queue):
+def fetch_time(gen_queue, start_queue):
     while True:
-        #if start_queue.get == True:
-        if True:
+
+        if start_queue.get() == True:
             try:
                 tscreenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
 
@@ -105,10 +152,23 @@ def fetch_time(start_queue):
                 pres.updateTime(endt)
 
 
+
             except: pass
 
+
+            #try:
+            #    if settings.auto:
+            #        keyboard.press("Tab")
+            #        update_status(gen_queue, start_queue)
+            #        time.sleep(0.2)
+            #        keyboard.release("Tab")
+            #except:
+            #   pass
+
+
+
             time.sleep(5)
-            #only need get time every 2s
+            # only need get time every 5s
 
 
 
@@ -125,11 +185,14 @@ t2 = Thread(target = continuously_update_status, args =(q, tstart_queue, ))
 
 
 t3 = Thread(target = run_callbacks)
-timet = Thread(target = fetch_time, args=(tstart_queue, ))
+timet = Thread(target = fetch_time, args=(q, tstart_queue, ))
 
 t1.start()
+
+
 t2.start()
 
 t3.start()
 timet.start()
+
 
