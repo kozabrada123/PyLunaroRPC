@@ -39,11 +39,14 @@ def run_callbacks():
 
 
 def update_status(out_queue, tstart_queue):
+    #Start time updating
+    tstart_queue.put(True)
+
+
     #wait 0.5s for tab to load
     time.sleep(0.5)
 
-    #Start time updating
-    tstart_queue.put(True)
+
 
     screenshot = pyautogui.screenshot("sc.png")
     screenshot = Image.open("sc.png")
@@ -56,7 +59,7 @@ def update_status(out_queue, tstart_queue):
     sun_lower = sun_upper + (250/1080)*pyautogui.size()[1]#y + height
 
     sun_screenshot = screenshot.crop((sun_left, sun_upper, sun_right, sun_lower))
-    sun_screenshot.save("sn.png")
+    #sun_screenshot.save("sn.png")
 
 
     moon_left = pyautogui.size()[0]/2 + (212/1920)* pyautogui.size()[0]#x
@@ -65,7 +68,7 @@ def update_status(out_queue, tstart_queue):
     moon_lower = moon_upper + (250/1080)* pyautogui.size()[1]#y+ height
 
     moon_screenshot = screenshot.crop((moon_left, moon_upper, moon_right, moon_lower))
-    moon_screenshot.save("mn.png")
+    #moon_screenshot.save("mn.png")
 
     #+s == Score
     suns_left = pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0]#x
@@ -94,7 +97,7 @@ def update_status(out_queue, tstart_queue):
 
     moon_players = imrec.getPlayers('moon', np.array(moon_screenshot))
 
-    sscore =imrec.getScore('sun', np.array(suns_screenshot))
+    sscore = imrec.getScore('sun', np.array(suns_screenshot))
 
     mscore = imrec.getScore('moon', np.array(moons_screenshot))
 
