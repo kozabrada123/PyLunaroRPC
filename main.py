@@ -39,14 +39,14 @@ def run_callbacks():
 
 
 def update_status(out_queue, tstart_queue):
-    #Start time updating
-    tstart_queue.put(True)
 
 
     #wait 0.5s for tab to load
     time.sleep(0.5)
 
 
+    #Start time updating
+    tstart_queue.put('True')
 
     screenshot = pyautogui.screenshot("sc.png")
     screenshot = Image.open("sc.png")
@@ -142,21 +142,25 @@ def continuously_update_status(out_queue, tstart_queue):
 
 
 def fetch_time(gen_queue, start_queue):
+    #settings.console.log("aaaa")
     while True:
 
-        if start_queue.get() == True:
-            try:
-                tscreenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
+        #settings.console.log(start_queue.get())
+        #settings.console.log("Alive")
+
+
+        try:
+            tscreenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
 
 
 
-                endt = imrec.getEndTimeEpoch(np.array(tscreenshot))
+            endt = imrec.getEndTimeEpoch(np.array(tscreenshot))
 
-                pres.updateTime(endt)
+            pres.updateTime(endt)
 
 
 
-            except: pass
+        except: pass
 
 
             #try:
@@ -170,8 +174,8 @@ def fetch_time(gen_queue, start_queue):
 
 
 
-            time.sleep(5)
-            # only need get time every 5s
+        time.sleep(5)
+        # only need get time every 5s
 
 
 
@@ -195,7 +199,8 @@ t1.start()
 
 t2.start()
 
-t3.start()
 timet.start()
+t3.start()
+
 
 

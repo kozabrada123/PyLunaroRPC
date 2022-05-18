@@ -97,7 +97,7 @@ def screenshot(param="None", save=False):
 
 
 
-def getPlayers(args=None, ascreenshot = None):
+def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m1 = None, m2 = None, m3 = None):
 
     if settings.ocr_solution == "easyocr":
         reader = easyocr.Reader(['en'])
