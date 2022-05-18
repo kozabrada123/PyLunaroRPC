@@ -5,6 +5,9 @@ import colorama
 import pyautogui
 import keyboard
 import string
+
+import pytesseract
+
 import lunaroplayers
 
 import cv2
@@ -29,6 +32,8 @@ def screenshot(param="None", save=False):
     :param bool save: Whether to save as a file or not
     :return: pyautogui image
     """
+
+    #Pretty deprecated
 
     screenshot = None
     sun = None
@@ -94,25 +99,47 @@ def screenshot(param="None", save=False):
 
 def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m1 = None, m2 = None, m3 = None):
 
+    if settings.ocr_solution == "easyocr":
+        reader = easyocr.Reader(['en'])
 
-    reader = easyocr.Reader(['en'])
+
+        text = reader.readtext(ascreenshot)
+
+        # print(text)
+
+        fa = []
+
+        # Try to run it through the database aswell
+
+        ftext = f""
+        for player in text:
+            fa.append(lplayers.TryFindByName(player[1])[1])
+        ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
+        #print(ftext)
+        settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
+        return ftext
 
 
-    text = reader.readtext(ascreenshot)
+    elif settings.ocr_solution == "tesseract":
 
-    # print(text)
+        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
 
-    fa = []
+        text = pytesseract.image_to_string(image=ascreenshot)
+        text = text.split('\n')
 
-    # Try to run it through the database aswell
+        # print(text)
 
-    ftext = f""
-    for player in text:
-        fa.append(lplayers.TryFindByName(player[1])[1])
-    ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
-    #print(ftext)
-    settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
-    return ftext
+        fa = []
+
+        # Try to run it through the database aswell
+
+        ftext = f""
+        for player in text:
+            fa.append(lplayers.TryFindByName(player)[1])
+        ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
+        # print(ftext)
+        settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
+        return ftext
 
 
 
@@ -120,27 +147,9 @@ def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m
 
 def getScore(args=None, ascreenshot = None):
 
-    if args == "moon":
 
 
-        reader = easyocr.Reader(['en'])
-
-
-        #ascreenshot.save("a.png")
-
-        text = reader.readtext(ascreenshot)
-        #print(text)
-
-        try:
-            settings.console.log(f"[blue] Moon Score: {text[0][1]} [/blue]")
-            return text[0][1]
-        except:
-            return 0
-
-
-
-
-    if args == "sun":
+    if settings.ocr_solution == "easyocr":
 
         reader = easyocr.Reader(['en'])
 
@@ -155,28 +164,63 @@ def getScore(args=None, ascreenshot = None):
         except:
             return 0
 
-    else:
-        return None
+    elif settings.ocr_solution == "tesseract":
+
+        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+
+
+        text = pytesseract.image_to_string(ascreenshot)
+
+        #settings.console.log(text)
+
+        try:
+            settings.console.log(f"[yellow] Sun Score: {text} [/yellow]")
+            return text
+        except:
+            return 0
 
 
 def getEndTimeEpoch(time_screenshot_array):
 
-    reader = easyocr.Reader(['en'])
-    text = reader.readtext(time_screenshot_array)
+    if settings.ocr_solution == "easyocr":
 
-    m_s = text[0][1].split(".")
+        reader = easyocr.Reader(['en'])
+        text = reader.readtext(time_screenshot_array)
 
-    secs = int(m_s[1]) - 1 # -1 since we spend ~a second calculating this
+        m_s = text[0][1].split(".")
 
-    secs += int(m_s[0]) * 60
+        secs = int(m_s[1]) - 1 # -1 since we spend ~a second calculating this
 
-    #try:
-    settings.console.log(f"[cyan]Remaining time: {text[0][1]} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
+        secs += int(m_s[0]) * 60
 
-    return int(time.time()) + secs
+        #try:
+        settings.console.log(f"[cyan]Remaining time: {text[0][1]} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
 
-    #except:
-    #    return None
+        return int(time.time()) + secs
+
+        #except:
+        #    return None
+
+
+    elif settings.ocr_solution == "tesseract":
+
+        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+
+        text = pytesseract.image_to_string(time_screenshot_array)
+
+        m_s = text.split(":")
+
+        secs = int(m_s[1]) - 1 # -1 since we spend ~a second calculating this
+
+        secs += int(m_s[0]) * 60
+
+        #try:
+        settings.console.log(f"[cyan]Remaining time: {text} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
+
+        return int(time.time()) + secs
+
+        #except:
+        #    return None
 
 
 
