@@ -48,6 +48,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 - First, download or git clone this repo.
 - Install the python requirements with `pip3 -r requirements.txt`.
+- unzip Dependences/tesseract-ocr.zip
 - You're done!
 
 ## Usage:
@@ -60,6 +61,8 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 - If nothing broke, game info should be processed and displayed on your profile.
 
 ## Troubleshooting and common issues:
+
+- If tesseract doesnt work for some reason, go to settings.py and set `ocr_solution = "easyocr"`
 
 
 - `CUDA not available - defaulting to CPU. Note: This module is much faster with a GPU.` - The most common issue, you can install [Nvidia CUDA](https://developer.nvidia.com/cuda-toolkit) to silence this error and make LunaroRPC run much faster. (Side note: many people may have problems installing CUDA, try to refer to [this](https://forums.developer.nvidia.com/t/windows-10-cuda-installation-failure-solved/64389)) 
@@ -77,7 +80,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 ## TO-DO And Future Updates To Expect
 
-- Update to use tesseract
+- Update to use tesseract for score and time
 
 - Local Statistics
 
