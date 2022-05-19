@@ -139,6 +139,9 @@ class LunaroPlayers:
             settings.console.log(f"[green] Found player {found[0]} [/green]")
             return found
         else:
+            if len(name) < 5:
+                return None
+
             #print(f"Returning 'Name': {name}, 'Shortn': None, 'Rank': None, 'Rankint': None")
             settings.console.log(f"[yellow] Didn't find any known players for {name} [/yellow]")
             return [name, name, None, None]
