@@ -183,7 +183,7 @@ def fetch_time(score_queue):
             ss, sm = imrec.getScore("sun and moon", np.array(score_screenshot))
             score_queue.queue[0] = [ss, sm]
             #print(str(score_queue.queue))
-        #except Exception as e:
+        except: pass
             #print(e)
 
         try:
