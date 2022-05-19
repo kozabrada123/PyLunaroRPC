@@ -77,7 +77,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 ## TO-DO And Future Updates To Expect
 
-- Time left tracking
+- Update to use tesseract
 
 - Local Statistics
 
