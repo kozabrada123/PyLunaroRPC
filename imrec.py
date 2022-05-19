@@ -195,7 +195,9 @@ def getScore(args=None, ascreenshot = None):
 
             text = ''.join(filter(scoreFilter, text))
 
-            settings.console.log(f"[yellow] {args} Score: {text} [/yellow]")
+            if text != '':
+
+                settings.console.log(f"[yellow] {args} Score: {text} [/yellow]")
 
 
             return [int(text.split('-')[0]), int(text.split('-')[1])]
