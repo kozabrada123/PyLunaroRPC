@@ -1,5 +1,11 @@
 import threading
 import time
+
+import numpy as np
+import pyautogui
+from PIL.Image import Image
+
+import imrec
 import settings
 
 import discordsdk as dsdk
@@ -14,6 +20,13 @@ class presenceManager:
         self.sun = ""
         self.moon = ""
 
+        self.sun_players = ""
+        self.moon_players = ""
+        self.sun_score = 0
+        self.moon_score = 0
+
+
+
 
 
     def startPresence(self):
@@ -27,6 +40,9 @@ class presenceManager:
         self.RPC.assets.small_image = "https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png"
 
         self.RPC_Manager.update_activity(self.RPC, lambda result: self.debugCallback("update_activity", result))
+
+
+
 
     def updatePresence(self, sun, moon):
         self.sun = sun
@@ -44,6 +60,36 @@ class presenceManager:
             #self.RPC.update(small_image="https://i.ibb.co/f4xwkTm/Lunaro-logo-pog.png", details=f"{sun}, {moon}")
 
         self.RPC_Manager.update_activity(self.RPC, self.debugCallback)
+
+
+
+
+    def update_status(self, sun_players=None, moon_players=None, sun_score=None, moon_score=None):
+
+
+        if sun_players is not None:
+            self.sun_players = sun_players
+
+        if moon_players is not None:
+            self.moon_players = moon_players
+
+
+        if sun_score is not None:
+            self.sun_score = sun_score
+
+        if moon_score is not None:
+            self.moon_score = moon_score
+
+
+
+        sun = f"☀️ {self.sun_score}: {self.sun_players}"
+        moon = f"🌙 {self.moon_score}: {self.moon_players}"
+
+        self.updatePresence(sun, moon)
+        # print("Updated Status!")
+        # print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
+        settings.console.log(    f"[cyan bold] {moon.replace('🌙', '🌙 Moon')} [/cyan bold][yellow bold] {sun.replace('☀️ ', '☀ Sun ')}[/yellow bold]")
+        #out_queue.put([sun, moon])
 
 
     def updateTime(self, time):

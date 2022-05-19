@@ -27,10 +27,44 @@ import presence
 sun = None
 moon = None
 
-
-
 pres = presence.presenceManager()
 pres.startPresence()
+
+
+def managePresence(player_queue, score_queue):
+
+
+    player_queue_old = ["", ""]
+    score_queue_old = [-1, -1]
+
+    time.sleep(1)
+
+    #pres.update_status(player_queue_old[0], player_queue_old[1], score_queue_old[0], score_queue_old[1])
+
+    while True:
+
+        try:
+            if player_queue_old == player_queue.queue[0] and score_queue_old != score_queue.queue[0]:
+                #Update just score
+                pres.update_status(sun_score=score_queue.queue[0][0], moon_score=score_queue.queue[0][1])
+
+            if player_queue_old != player_queue.queue[0] and score_queue_old == score_queue.queue[0] and not (player_queue.queue[0][0] == "" and player_queue.queue[0][1] == ""):
+                #Update just players
+                pres.update_status(sun_players=player_queue.queue[0][0], moon_players=player_queue.queue[0][1])
+
+            if player_queue_old != player_queue.queue[0] and score_queue_old != score_queue.queue[0] and not (player_queue.queue[0][0] == "" and player_queue.queue[0][1] == ""):
+                # Update both
+                pres.update_status(sun_players=player_queue.queue[0][0], moon_players=player_queue.queue[0][1], sun_score=score_queue.queue[0][0], moon_score=score_queue.queue[0][1])
+
+
+            player_queue_old = player_queue.queue[0]
+            score_queue_old = score_queue.queue[0]
+
+        except: pass
+
+        time.sleep(0.2)
+
+        #print(player_queue.queue, score_queue.queue)
 
 def run_callbacks():
     while 1:
@@ -38,7 +72,7 @@ def run_callbacks():
         pres.runCallbacks()
 
 
-def update_status(out_queue, score_queue):
+def update_players(out_queue):
 
 
     #wait 0.5s for tab to load
@@ -98,23 +132,9 @@ def update_status(out_queue, score_queue):
 
     moon_players = imrec.getPlayers('moon', np.array(moon_screenshot))
 
-    #sscore = imrec.getScore('sun', np.array(suns_screenshot))
-
-    #mscore = imrec.getScore('moon', np.array(moons_screenshot))
 
 
-    sscore = score_queue.queue[0][0]
-    mscore = score_queue.queue[0][1]
-
-    print(sscore, mscore)
-
-    sun = f"☀️ {sscore}: {sun_players}"
-    moon = f"🌙 {mscore}: {moon_players}"
-    pres.updatePresence(sun, moon)
-    #print("Updated Status!")
-    #print(f"{colorama.Fore.CYAN}{moon}; {colorama.Fore.YELLOW}{sun}")
-    settings.console.log(f"[cyan bold] {moon.replace('🌙','🌙 Moon')} [/cyan bold][yellow bold] {sun.replace('☀️ ', '☀ Sun ')}[/yellow bold]")
-    out_queue.put([sun, moon])
+    out_queue.queue[0] = [sun_players, moon_players]
 
 
 
@@ -136,13 +156,12 @@ def keep_status_alive(in_queue):
 
 
 
-def continuously_update_status(out_queue, tstart_queue):
+def continuously_update_status(out_queue):
     #print(f"{colorama.Fore.CYAN}Outside of Game")
     settings.console.log(f"[cyan] Outside of game.. [/cyan]")
-    pres.updatePresence("Outside of game..", "")
-    out_queue.put(["Outside of game..", ""])
+    out_queue.queue.append(["Outside of game..", ""])
 
-    keyboard.add_hotkey(f'Tab', lambda: update_status(out_queue, tstart_queue))
+    keyboard.add_hotkey(f'Tab', lambda: update_players(out_queue))
     keyboard.wait()
 
 
@@ -213,30 +232,28 @@ def fetch_time(score_queue):
 
 
 #General queue
-q = Queue()
+player_queue = PriorityQueue()
 
 #Time queues
 score_queue = PriorityQueue()
 
-q.put(["", ""])
+
 #score_queue.put([0,0])
 
-t1 = Thread(target = keep_status_alive, args =(q, ))
-t2 = Thread(target = continuously_update_status, args =(q, score_queue, ))
+#t1 = Thread(target = keep_status_alive, args =(player_queue, ))
 
+player_queue.queue.append(["", ""])
+score_queue.queue.append([-1, -1])
 
-t3 = Thread(target = run_callbacks)
+tabt = Thread(target = continuously_update_status, args =(player_queue, ))
+callt = Thread(target = run_callbacks)
 timet = Thread(target = fetch_time, args=(score_queue, ))
+mngt = Thread(target = managePresence, args=(player_queue, score_queue, ))
 
-t1.start()
-
-
-t2.start()
+#t1.start()
 
 
-t3.start()
-
+tabt.start()
+callt.start()
 timet.start()
-
-
-
+mngt.start()
