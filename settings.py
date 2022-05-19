@@ -10,7 +10,7 @@ ocr_solution = "tesseract"
 #tesseract default, if you can't run / install tesseract replace with "easyocr"
 
 
-tesseract_path = r"C:\Users\natan\PycharmProjects\warframe\dependencies\Tesseract-OCR\tesseract.exe"
+tesseract_path = r"C:\Program Files\Tesseract-OCR\tesseract.exe"
 
 console = Console(color_system="auto",soft_wrap=True)
 
