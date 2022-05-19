@@ -37,7 +37,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 ## Prerequisites
 
 * Python 3.7+
-* Tesseract
+* Tesseract (optional but highly recommended)
 
 <br/>
 
