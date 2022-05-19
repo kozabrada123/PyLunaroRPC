@@ -48,7 +48,8 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 - First, download or git clone this repo.
 - Install the python requirements with `pip3 -r requirements.txt`.
-- unzip Dependences/tesseract-ocr.zip
+- Install [tesseract-ocr](https://github.com/UB-Mannheim/tesseract/wiki) (Not required, you can set `ocr_solution = "easyocr"` in settings but this is highly recommended.)
+- (if you installed Tesseract into a directory that isnt default, set it in settings.py)
 - You're done!
 
 ## Usage:
