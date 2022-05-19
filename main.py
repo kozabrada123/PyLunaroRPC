@@ -1,4 +1,4 @@
-from queue import Queue
+from queue import Queue, PriorityQueue
 from threading import Thread
 
 import asyncio
@@ -38,15 +38,11 @@ def run_callbacks():
         pres.runCallbacks()
 
 
-def update_status(out_queue, tstart_queue):
+def update_status(out_queue, score_queue):
 
 
     #wait 0.5s for tab to load
     time.sleep(0.5)
-
-
-    #Start time updating
-    tstart_queue.put('True')
 
     screenshot = pyautogui.screenshot("sc.png")
     screenshot = Image.open("sc.png")
@@ -71,20 +67,25 @@ def update_status(out_queue, tstart_queue):
     #moon_screenshot.save("mn.png")
 
     #+s == Score
-    suns_left = pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0]#x
-    suns_upper = (240/1080)*pyautogui.size()[1]#y
-    suns_right = suns_left + (150/1920)*pyautogui.size()[0]#x + width
-    suns_lower = suns_upper + (70/1080)*pyautogui.size()[1]#y + height
+    #Now calculating the score a different way.
+    #suns_left = pyautogui.size()[0]/2 - (580/1920)*pyautogui.size()[0]#x
+    #suns_upper = (240/1080)*pyautogui.size()[1]#y
+    #suns_right = suns_left + (150/1920)*pyautogui.size()[0]#x + width
+    #suns_lower = suns_upper + (70/1080)*pyautogui.size()[1]#y + height
 
-    suns_screenshot = screenshot.crop((suns_left, suns_upper, suns_right, suns_lower))
+    #suns_screenshot = screenshot.crop((suns_left, suns_upper, suns_right, suns_lower))
+
+    #suns_screenshot.save("ss.png")
 
 
-    moons_left = pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0]#x
-    moons_upper = (240/1080)*pyautogui.size()[1]#y
-    moons_right = moons_left + (150/1920)*pyautogui.size()[0]#x + width
-    moons_lower = moons_upper + (70/1080)*pyautogui.size()[1]#y + height
+    #moons_left = pyautogui.size()[0]/2 + (430/1920)*pyautogui.size()[0]#x
+    #moons_upper = (240/1080)*pyautogui.size()[1]#y
+    #moons_right = moons_left + (150/1920)*pyautogui.size()[0]#x + width
+    #moons_lower = moons_upper + (70/1080)*pyautogui.size()[1]#y + height
 
-    moons_screenshot = screenshot.crop((moons_left, moons_upper, moons_right, moons_lower))
+    #moons_screenshot = screenshot.crop((moons_left, moons_upper, moons_right, moons_lower))
+
+    #moons_screenshot.save("mns.png")
 
 
 
@@ -97,11 +98,15 @@ def update_status(out_queue, tstart_queue):
 
     moon_players = imrec.getPlayers('moon', np.array(moon_screenshot))
 
-    sscore = imrec.getScore('sun', np.array(suns_screenshot))
+    #sscore = imrec.getScore('sun', np.array(suns_screenshot))
 
-    mscore = imrec.getScore('moon', np.array(moons_screenshot))
+    #mscore = imrec.getScore('moon', np.array(moons_screenshot))
 
 
+    sscore = score_queue.queue[0][0]
+    mscore = score_queue.queue[0][1]
+
+    print(sscore, mscore)
 
     sun = f"☀️ {sscore}: {sun_players}"
     moon = f"🌙 {mscore}: {moon_players}"
@@ -141,26 +146,54 @@ def continuously_update_status(out_queue, tstart_queue):
     keyboard.wait()
 
 
-def fetch_time(gen_queue, start_queue):
-    #settings.console.log("aaaa")
+def fetch_time(score_queue):
+    score_queue.put([0, 0])
     while True:
 
-        #settings.console.log(start_queue.get())
-        #settings.console.log("Alive")
+
+
+        #try:
+        screenshot = pyautogui.screenshot("t.png")
+        screenshot = Image.open("t.png")
+
+        time_left = pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0]  # x
+        time_upper = (90 / 1080) * pyautogui.size()[1]  # y
+        time_right = time_left + ((43 / 1920) * pyautogui.size()[0])  # x + width
+        time_lower = time_upper + ((25 / 1080) * pyautogui.size()[1])  # y + height
+
+        time_screenshot = screenshot.crop((time_left, time_upper, time_right, time_lower))
+        #time_screenshot.save("ts.png")
+
+
+        score_left = pyautogui.size()[0] / 2 - (75 /1920) * pyautogui.size()[1] # x
+        score_upper = (60 / 1080) * pyautogui.size()[1]
+        score_right = score_left + ((80 / 1920) * pyautogui.size()[0]) #x + width
+        score_lower = score_upper + ((55 / 1920) * pyautogui.size()[1]) #y + height
+
+        score_screenshot = screenshot.crop((score_left, score_upper, score_right, score_lower)).convert("L")
+        score_screenshot = cv2.fastNlMeansDenoising(np.array(score_screenshot), None, 10, 7, 21)
+        score_screenshot = Image.fromarray(score_screenshot)
+        score_screenshot = score_screenshot.resize([score_screenshot.size[0] * 2, score_screenshot.size[1] * 2])
+
+        score_screenshot.save("s.png")
+
 
 
         try:
-            tscreenshot = pyautogui.screenshot(region=(pyautogui.size()[0] / 2 - (22 / 1920) * pyautogui.size()[0], (94 / 1080) * pyautogui.size()[1], (43 / 1920) * pyautogui.size()[0], (18 / 1080) * pyautogui.size()[1]))
+            ss, sm = imrec.getScore("sun and moon", np.array(score_screenshot))
+            score_queue.queue[0] = [ss, sm]
+            #print(str(score_queue.queue))
+        #except Exception as e:
+            #print(e)
 
-
-
-            endt = imrec.getEndTimeEpoch(np.array(tscreenshot))
-
+        try:
+            endt = imrec.getEndTimeEpoch(np.array(time_screenshot))
             pres.updateTime(endt)
-
-
-
         except: pass
+
+
+
+
 
 
             #try:
@@ -174,8 +207,8 @@ def fetch_time(gen_queue, start_queue):
 
 
 
-        time.sleep(5)
-        # only need get time every 5s
+        time.sleep(2)
+        # only need get time every 2s
 
 
 
@@ -183,24 +216,27 @@ def fetch_time(gen_queue, start_queue):
 q = Queue()
 
 #Time queues
-tstart_queue = Queue()
+score_queue = PriorityQueue()
 
 q.put(["", ""])
+#score_queue.put([0,0])
 
 t1 = Thread(target = keep_status_alive, args =(q, ))
-t2 = Thread(target = continuously_update_status, args =(q, tstart_queue, ))
+t2 = Thread(target = continuously_update_status, args =(q, score_queue, ))
 
 
 t3 = Thread(target = run_callbacks)
-timet = Thread(target = fetch_time, args=(q, tstart_queue, ))
+timet = Thread(target = fetch_time, args=(score_queue, ))
 
 t1.start()
 
 
 t2.start()
 
-timet.start()
+
 t3.start()
+
+timet.start()
 
 
 

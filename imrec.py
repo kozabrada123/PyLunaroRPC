@@ -1,4 +1,5 @@
 import random
+import re
 import time
 
 import colorama
@@ -113,7 +114,10 @@ def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m
 
         ftext = f""
         for player in text:
-            fa.append(lplayers.TryFindByName(player[1])[1])
+            p = lplayers.TryFindByName(player[1])
+            if p is not None:
+                fa.append(p[1])
+
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         #print(ftext)
         settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
@@ -135,13 +139,27 @@ def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m
 
         ftext = f""
         for player in text:
-            fa.append(lplayers.TryFindByName(player)[1])
+            p = lplayers.TryFindByName(player)
+            if p is not None:
+                fa.append(p[1])
+
         ftext += str(fa).replace("[", "").replace("]", "").replace("'", "")
         # print(ftext)
         settings.console.log(f"[yellow] Found {args} Players! [/yellow]")
         return ftext
 
 
+
+def scoreFilter(char):
+    try:
+        int(char)
+        return True
+
+    except:
+        if char != "-":
+            return False
+
+        return True
 
 
 
@@ -159,8 +177,8 @@ def getScore(args=None, ascreenshot = None):
         text = reader.readtext(ascreenshot)
 
         try:
-            #settings.console.log(f"[yellow] Sun Score: {text[0][1]} [/yellow]")
-            return text[0][1]
+            #settings.console.log(f"[yellow] {args} Score: {text[0][1]} [/yellow]")
+            return [int(text[0][1].split('-')[0]), int(text[0][1].split('-')[1])]
         except:
             return 0
 
@@ -169,13 +187,18 @@ def getScore(args=None, ascreenshot = None):
         pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
 
 
-        text = pytesseract.image_to_string(ascreenshot)
+        text = pytesseract.image_to_string(ascreenshot, config='--psm 13')
 
         #settings.console.log(text)
 
         try:
-            settings.console.log(f"[yellow] Sun Score: {text} [/yellow]")
-            return text
+
+            text = ''.join(filter(scoreFilter, text))
+
+            settings.console.log(f"[yellow] {args} Score: {text} [/yellow]")
+
+
+            return [int(text.split('-')[0]), int(text.split('-')[1])]
         except:
             return 0
 
@@ -187,26 +210,28 @@ def getEndTimeEpoch(time_screenshot_array):
         reader = easyocr.Reader(['en'])
         text = reader.readtext(time_screenshot_array)
 
+
         m_s = text[0][1].split(".")
 
         secs = int(m_s[1]) - 1 # -1 since we spend ~a second calculating this
 
         secs += int(m_s[0]) * 60
 
-        #try:
+
         settings.console.log(f"[cyan]Remaining time: {text[0][1]} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
 
         return int(time.time()) + secs
 
-        #except:
-        #    return None
 
 
     elif settings.ocr_solution == "tesseract":
 
         pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
 
-        text = pytesseract.image_to_string(time_screenshot_array)
+        text = pytesseract.image_to_string(time_screenshot_array, config="--psm 13")
+
+        #print(text)
+
 
         m_s = text.split(":")
 
@@ -214,13 +239,10 @@ def getEndTimeEpoch(time_screenshot_array):
 
         secs += int(m_s[0]) * 60
 
-        #try:
+
         settings.console.log(f"[cyan]Remaining time: {text} ({str(secs)} seconds, {str(int(time.time() + secs))})[/cyan]")
 
         return int(time.time()) + secs
-
-        #except:
-        #    return None
 
 
 
@@ -237,6 +259,3 @@ def wait(debug=False):
         return screenshot(save=True)
     else:
         return screenshot()
-
-
-#a = print(getEndTimeEpoch(np.array(screenshot("time"))))
