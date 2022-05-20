@@ -126,7 +126,9 @@ def getPlayers(args=None, ascreenshot = None, s1 = None, s2 = None, s3 = None, m
 
     elif settings.ocr_solution == "tesseract":
 
-        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        try:
+            pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        except:pass
 
         text = pytesseract.image_to_string(image=ascreenshot)
         text = text.split('\n')
@@ -184,7 +186,9 @@ def getScore(args=None, ascreenshot = None):
 
     elif settings.ocr_solution == "tesseract":
 
-        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        try:
+            pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        except:pass
 
 
         text = pytesseract.image_to_string(ascreenshot, config='--psm 13')
@@ -224,7 +228,9 @@ def getEndTimeEpoch(time_screenshot_array):
 
     elif settings.ocr_solution == "tesseract":
 
-        pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        try:
+            pytesseract.pytesseract.tesseract_cmd = settings.tesseract_path
+        except:pass
 
         text = pytesseract.image_to_string(time_screenshot_array, config="--psm 13")
 
