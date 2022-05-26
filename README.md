@@ -57,8 +57,7 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 - (**Make sure to launch LunaroRPC before Warframe**)
 - Launch Warframe
 - Go into a game of lunaro
-- Press 'o' (default hotkey, configurable in settings.py) while holding TAB
-- If nothing broke, game info should be processed and displayed on your profile.
+- PyLunaroRPC will slowly get releveant data from what's shown on your screen.
 
 ## Troubleshooting and common issues:
 
@@ -80,9 +79,10 @@ A simple tool for Lunaro in Warframe which shows current match data on your prof
 
 ## TO-DO And Future Updates To Expect
 
-- Update to use tesseract for score and time
 
-- Local Statistics
+- Local Statistics and integration into lunaro elo system (once its in production)
+
+- Make tensorflow model for way better and easier ocr
 
 - **At least basic UI** (Probably gonna be made with [Textual](https://github.com/Textualize/textual))
 
