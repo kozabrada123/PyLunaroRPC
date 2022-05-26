@@ -14,8 +14,6 @@ import pyautogui
 
 import settings
 
-_sentinel = object()
-
 import time
 
 import keyboard
@@ -23,6 +21,7 @@ import keyboard
 import imrec
 import presence
 
+_sentinel = object()
 
 sun = None
 moon = None
