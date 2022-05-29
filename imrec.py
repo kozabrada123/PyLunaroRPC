@@ -199,8 +199,18 @@ def getScore(args=None, ascreenshot = None):
 
             text = ''.join(filter(scoreFilter, text))
 
+            ss, ms = int(text.split('-')[0]), int(text.split('-')[1])
 
-            return [int(text.split('-')[0]), int(text.split('-')[1])]
+            if ss > 22:
+                # If sun score is incorrectly eg. 40 instead of 4, only use the first digit of 40
+                ss = int(str(ss)[0])
+
+            if ms > 22:
+                # Same for moon
+                ms = int(str(ms)[0])
+
+            return [ss, ms]
+
         except:
             return 0
 
