@@ -36,30 +36,64 @@ def managePresence(player_queue, score_queue):
     player_queue_old = ["", ""]
     score_queue_old = [-1, -1]
 
+    # Get values from queue here so we don't get them ~10 times later
+    cplayer_queue = player_queue.queue[0]
+    cscore_queue = score_queue.queue[0]
+
     time.sleep(1)
 
-    #pres.update_status(player_queue_old[0], player_queue_old[1], score_queue_old[0], score_queue_old[1])
 
     while True:
 
         try:
-            if player_queue_old == player_queue.queue[0] and score_queue_old != score_queue.queue[0]:
-                #Update just score
-                pres.update_status(sun_score=score_queue.queue[0][0], moon_score=score_queue.queue[0][1])
 
-            if player_queue_old != player_queue.queue[0] and score_queue_old == score_queue.queue[0] and not (player_queue.queue[0][0] == "" and player_queue.queue[0][1] == ""):
-                #Update just players
-                pres.update_status(sun_players=player_queue.queue[0][0], moon_players=player_queue.queue[0][1])
+            # First check if score is messed up
 
-            if player_queue_old != player_queue.queue[0] and score_queue_old != score_queue.queue[0] and not (player_queue.queue[0][0] == "" and player_queue.queue[0][1] == ""):
-                # Update both
-                pres.update_status(sun_players=player_queue.queue[0][0], moon_players=player_queue.queue[0][1], sun_score=score_queue.queue[0][0], moon_score=score_queue.queue[0][1])
+            # (Sun)
+            # If score has increased by more than 3, we've done an oopsie
+            if (cscore_queue[0] - score_queue_old[0]) > 3:
+                # If we read it falsely, fallback to old value
+                cscore_queue[0] = score_queue_old[0]
 
+            # Now with moon as well
+            if (cscore_queue[1] - score_queue_old[1]) > 3:
+                cscore_queue[1] = score_queue_old[1]
 
-            player_queue_old = player_queue.queue[0]
-            score_queue_old = score_queue.queue[0]
+            # Score should now be fine
 
-        except: pass
+            # Check if player queue is messed up
+
+            # (Sun)
+            # If any queue is "" it means we did a shit
+            if cplayer_queue[0] == "":
+                cplayer_queue[0] = player_queue_old[0]
+
+            # Now with moon as well
+            # If any queue is "" it means we did a shit
+            if cplayer_queue[1] == "":
+                cplayer_queue[1] = player_queue_old[1]
+
+            # Fixing is done, update stuff
+
+            # If nothing changed, don't do anything
+            if player_queue_old == cplayer_queue and score_queue_old == cscore_queue:
+
+                # Exception stops update and nothing happens because of try except
+                raise Exception("No update needed, passing update")
+
+            # Update everything, even if it hasn't changed, just so we have a lot of if statements
+            pres.update_status(sun_players=cplayer_queue[0],
+                               moon_players=cplayer_queue[1],
+                               sun_score=cscore_queue[0],
+                               moon_score=cscore_queue[1]
+                               )
+
+            #Set old queue to new queue
+            player_queue_old = cplayer_queue
+            score_queue_old = cscore_queue
+
+        except:
+            pass
 
         time.sleep(0.2)
 
