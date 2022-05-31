@@ -101,7 +101,15 @@ class presenceManager:
 
 
     def runCallbacks(self):
-        self.app.run_callbacks()
+        try:
+            self.app.run_callbacks()
+        except:
+            try:
+                self.startPresence()
+                self.update_status()
+            except:
+                print("Discord SDK Broke..")
+
 
 
     def debugCallback(self, result, something=None):
@@ -114,7 +122,6 @@ class presenceManager:
             # Restart
             print("Restarting...")
             try:
-                self.stop()
                 self.startPresence()
                 self.update_status()
             except: pass
