@@ -110,7 +110,14 @@ class presenceManager:
             pass
         else:
             #print(result)
-            pass
+
+            # Restart
+            print("Restarting...")
+            try:
+                self.stop()
+                self.startPresence()
+                self.update_status()
+            except: pass
 
     def stop(self):
         self.RPC.close()
