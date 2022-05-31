@@ -44,9 +44,11 @@ def managePresence(player_queue, score_queue):
 
         try:
 
-            # First check if score is messed up
+            # Get scores and players
             cplayer_queue = player_queue.queue[0]
             cscore_queue = score_queue.queue[0]
+
+            # First check if score is messed up
 
             # (Sun)
             # If score has increased by more than 3, we've done an oopsie
