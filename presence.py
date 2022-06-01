@@ -117,14 +117,15 @@ class presenceManager:
             #print("Successfully set the activity!")
             pass
         else:
-            #print(result)
 
-            # Restart
-            print("Restarting...")
-            try:
-                self.startPresence()
-                self.update_status()
-            except: pass
+            if result == dsdk.Result.internal_error:
+                # Restart
+                print("Restarting...")
+
+                try:
+                    self.startPresence()
+                    self.update_status()
+                except: pass
 
     def stop(self):
         self.RPC.close()
