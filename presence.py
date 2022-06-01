@@ -42,6 +42,17 @@ class presenceManager:
         self.RPC_Manager.update_activity(self.RPC, lambda result: self.debugCallback("update_activity", result))
 
 
+    def restartPresence(self):
+
+        self.RPC_Manager = self.app.get_activity_manager()
+
+        self.RPC = dsdk.Activity()
+        self.RPC.details = f"{self.sun}"
+        self.RPC.state = f"{self.moon}"
+        self.RPC.assets.small_image = "https://raw.githubusercontent.com/kozabrada123/PyLunaroRPC/main/assets/images/Lunaro-logo.png"
+
+        self.RPC_Manager.update_activity(self.RPC, lambda result: self.debugCallback("update_activity", result))
+
 
 
     def updatePresence(self, sun, moon):
@@ -105,7 +116,7 @@ class presenceManager:
             self.app.run_callbacks()
         except:
             try:
-                self.startPresence()
+                self.restartPresence()
                 self.update_status()
             except:
                 print("Discord SDK Broke..")
@@ -123,7 +134,7 @@ class presenceManager:
                 print("Restarting...")
 
                 try:
-                    self.startPresence()
+                    self.restartPresence()
                     self.update_status()
                 except: pass
 
