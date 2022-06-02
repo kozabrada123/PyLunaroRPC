@@ -66,13 +66,13 @@ def managePresence(player_queue, score_queue):
 
             # (Sun)
             # If any queue is "" it means we did a shit
-            if cplayer_queue[0] == "":
-                cplayer_queue[0] = player_queue_old[0]
+            #if cplayer_queue[0] == "":
+            #    cplayer_queue[0] = player_queue_old[0]
 
             # Now with moon as well
             # If any queue is "" it means we did a shit
-            if cplayer_queue[1] == "":
-                cplayer_queue[1] = player_queue_old[1]
+            #if cplayer_queue[1] == "":
+            #    cplayer_queue[1] = player_queue_old[1]
 
             # Fixing is done, update stuff
 
@@ -201,6 +201,8 @@ def continuously_update_status(out_queue):
 
 def fetch_time(score_queue):
     score_queue.put([0, 0])
+
+    endt_old = 0
     while True:
 
 
@@ -241,7 +243,11 @@ def fetch_time(score_queue):
 
         try:
             endt = imrec.getEndTimeEpoch(np.array(time_screenshot))
-            pres.updateTime(endt)
+
+            if not endt == endt_old:
+                pres.updateTime(endt)
+
+            endt_old = endt
         except: pass
 
 
@@ -260,8 +266,8 @@ def fetch_time(score_queue):
 
 
 
-        time.sleep(2)
-        # only need get time every 2s
+        time.sleep(0.5)
+        # only need get time every 0.5s
 
 
 
